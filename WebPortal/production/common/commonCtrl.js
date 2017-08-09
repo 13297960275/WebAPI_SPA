@@ -1,5 +1,14 @@
 ﻿'use strict';
 
+app.controller('indexCtrl', function ($scope, $state) {
+    //debugger
+    $state.go('login');
+});
+
+app.controller('headerCtrl', function ($scope, $state) {
+
+});
+
 app.controller('menuCtrl', function ($scope, $state) {
     //toggle ECS menu
     jQuery(".arrow-down").hide();
@@ -21,4 +30,20 @@ app.controller('menuCtrl', function ($scope, $state) {
     $scope.goToRatecard = function () {
         $state.go('main.rateCard');
     };
+});
+
+app.controller('loginCtrl', function ($scope, $state) {
+    $scope.doLogin = function () {
+        $state.go('main.custMgt');
+        //alert("haha");
+    };
+});
+
+app.controller('mainCtrl', function ($scope, $state) {
+    //$scope.goToCust = function () {
+    //    alert('main');
+    //    jQuery('div.modal-backdrop.fade.in').remove();
+    //    alert('haha');
+    //    $state.go('main.custMgt');
+    //};
 });

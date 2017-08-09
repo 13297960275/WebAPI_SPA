@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('custcontroller', function ($scope, $state) {
+app.controller('customerCtrl', function ($scope, $state) {
     $scope.goToAddPartner = function () {
         $state.go('main.addPartner')
     };

@@ -1,3 +1,5 @@
+//swiper
+importFile('vendors/swiper/dist/css/swiper.min.css', 'css');
 //bootstrap
 importFile('vendors/bootstrap/dist/css/bootstrap.min.css', 'css');
 importFile('vendors/bootstrap-daterangepicker/daterangepicker.css', 'css');
@@ -22,8 +24,7 @@ importFile('vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css', 
 importFile('vendors/nprogress/nprogress.css', 'css');
 //tree grid
 importFile('vendors/jquery-treegrid/css/jquery.treegrid.css', 'css');
-//swiper
-importFile('vendors/swiper/dist/css/swiper.min.css', 'css');
+
 //custom
 importFile('css/custom.min.css', 'css');
 

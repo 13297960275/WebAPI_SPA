@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('indexcontroller', function ($scope, $state) {
+app.controller('indexCtrl', function ($scope, $state) {
     //debugger
     $state.go('login');
 });

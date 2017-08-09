@@ -2,9 +2,12 @@
 document.write('<script type="text/javascript" src="../assets/vendors/jquery/dist/jquery.min.js"><\/script>');
 
 //angular
-//document.write('<script type="text/javascript" src="../assets/vendors/angular/angular.min.js"><\/script>');
-//document.write('<script type="text/javascript" src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"><\/script>');
-//document.write('<script type="text/javascript" src="../assets/vendors/angular-translate/angular-translate.min.js"><\/script>');
+document.write('<script type="text/javascript" src="../assets/vendors/angular/angular.min.js"><\/script>');
+document.write('<script type="text/javascript" src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"><\/script>');
+document.write('<script type="text/javascript" src="../assets/vendors/angular-translate/angular-translate.min.js"><\/script>');
+
+//oclazyload
+document.write('<script type="text/javascript" src="../assets/vendors/oclazyload/dist/ocLazyLoad.min.js"><\/script>');
 
 //Bootstrap
 document.write('<script type="text/javascript" src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"><\/script>');

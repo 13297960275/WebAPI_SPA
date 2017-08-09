@@ -39,6 +39,6 @@ jQuery(window).resize(function () {
         jQuery('.swiper').addClass('swiper-container');
         jQuery('.swiper-wrapper-xs').addClass('swiper-wrapper');
     }
-    swiper.reInit();
+    //swiper.reInit();
 })
 jQuery(window).trigger('resize');

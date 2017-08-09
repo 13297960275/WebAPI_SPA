@@ -38,7 +38,8 @@
     "datatables.net-scroller-bs": "^1.4.2",
     "angular": "1.5.7",
     "angular-ui-router": "1.0",
-    "angular-translate": "2.7.2"
+    "angular-translate": "2.7.2",
+    "oclazyload": "1.0.9"
   },
   "resolutions": {
     "angular": ">= 1.2.0"

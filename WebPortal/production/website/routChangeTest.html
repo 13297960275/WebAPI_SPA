@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AngularJS监听路由变化</title>
+</head>
+<body ng-app="ngRouteExample">
+	<div id="navigation">
+		<a href="#/home" rel="external nofollow">Home</a>
+		<a href="#/about" rel="external nofollow">About</a>
+	</div>
+
+	<div ng-view></div>
+
+	<script type="text/ng-template" id="home.html">
+		<h1> Home </h1>
+		<table>
+			<tbody>
+				<tr ng-repeat="x in records" style="background:#abcdef;">
+					<td>{{x.Name}}</td>
+					<td>{{x.Country}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</script>
+
+	<script type="text/ng-template" id="about.html">
+		<h1> About </h1>
+		<p>在输入框中尝试输入：</p>
+		<p>姓名：<input type="text" ng-model="name"></p>
+		<p>你输入的为： {{name}}</p>
+	</script>
+
+	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('ngRouteExample', ['ngRoute']);
+		app.config(function ($routeProvider) {
+			$routeProvider.
+			when('/home', {
+				templateUrl: 'home.html',
+				controller: 'HomeController'
+			}).
+			when('/about', {
+				templateUrl: 'about.html',
+				controller: 'AboutController'
+			}).
+			otherwise({
+				redirectTo: '/home'
+			});
+		});
+		app.controller('HomeController', function ($scope) {
+			$scope.records = [{
+				"Name": "Alfreds Futterkiste",
+				"Country": "Germany"
+			}, {
+				"Name": "Berglunds snabbköp",
+				"Country": "Sweden"
+			}, {
+				"Name": "Centro comercial Moctezuma",
+				"Country": "Mexico"
+			}, {
+				"Name": "Ernst Handel",
+				"Country": "Austria"
+			}]
+		});
+		app.controller('AboutController', function ($scope) {
+			$scope.name = '呵呵';
+		});
+
+		//增加路由跳转时的判断，如果是同一个页面重新刷新，则让其跳转到相应的页面。
+		app.run(['$rootScope', '$window', '$location', '$log', function ($rootScope, $window, $location, $log) {
+
+			/* 监听路由的状态变化 */
+			$rootScope.$on('$routeChangeStart', function (evt, next, current) {
+				console.log('route begin change');
+				console.log('arguments = ', arguments);
+				console.log('evt=', evt);
+				console.log('current=', current);
+				console.log('next=', next);
+			});
+			$rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
+				console.log('route have already changed ：' + $location.path());
+				console.log('arguments = ', arguments);
+				console.log('evt=', evt);
+				console.log('current=', current);
+				console.log('previous=', previous);
+			});
+
+			var locationChangeStartOff = $rootScope.$on('$locationChangeStart', locationChangeStart);
+			var locationChangeSuccessOff = $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
+			var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);
+			var isSecond = false;
+			//
+			function locationChangeStart(event, newUrl, currentUrl) {
+				//调试用信息，测试无误后可删除
+				console.log('arguments = ', arguments);
+				console.log('newUrl = ', newUrl);
+				console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
+				console.log('currentUrl = ', currentUrl);
+				if (decodeURIComponent(newUrl) == currentUrl) {
+					console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
+					if (currentUrl.indexOf('upload_topic_image') >= 0) {
+						if (isSecond) {
+							console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+							$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+							isSecond = false;
+						} else {
+							isSecond = true;
+							console.log('isSecond =  ', isSecond);
+						}
+						event.preventDefault();
+						return;
+					}
+				}
+				console.log('locationChangeStart判断结束 ');
+
+			}
+			function locationChangeSuccess(event, newUrl, currentUrl) {
+				//调试用信息，测试无误后可删除
+				console.log('arguments = ', arguments);
+				console.log('newUrl = ', newUrl);
+				console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
+				console.log('currentUrl = ', currentUrl);
+				if (decodeURIComponent(newUrl) == currentUrl) {
+					console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
+					if (currentUrl.indexOf('upload_topic_image') >= 0) {
+						if (isSecond) {
+							console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+							$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+							isSecond = false;
+						} else {
+							isSecond = true;
+							console.log('isSecond =  ', isSecond);
+						}
+						event.preventDefault();
+						return;
+					}
+				}
+				console.log('locationChangeSuccess判断结束 ');
+			}
+			function routeChangeStart(event, newUrl, currentUrl) {
+				//调试用信息，测试无误后可删除
+				console.log('routeChangeStart-----开始 ');
+				console.log('arguments = ', arguments);
+
+				if (newUrl != undefined && currentUrl != undefined && newUrl.$$route != undefined && currentUrl.loadedTemplateUrl != undefined) {
+					console.log('newUrl = ', newUrl);
+					console.log('newUrl.url = ', newUrl.$$route.templateUrl);
+					console.log('currentUrl = ', currentUrl.loadedTemplateUrl);
+					if (newUrl.$$route.templateUrl == currentUrl.loadedTemplateUrl) {
+						console.log('currentUrl.indexof = ', currentUrl.loadedTemplateUrl.indexOf('upload_topic_image'));
+						if (currentUrl.loadedTemplateUrl.indexOf('upload_topic_image') >= 0) {
+							//                        if (isSecond) {
+							console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+							$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+							isSecond = false;
+							//                        } else {
+							//                            isSecond = true;
+							//                            console.log('isSecond =  ', isSecond);
+							//                        }
+							event.preventDefault();
+							return;
+						}
+					}
+				}
+				console.log('routeChangeStart-----结束 ');
+			}
+		}]);
+	</script>
+</body>
+</html>

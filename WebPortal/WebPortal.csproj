@@ -88,16 +88,12 @@
     <Content Include="production\assets\vendors\angular\angular.min.js" />
     <Content Include="production\assets\vendors\angular\index.js" />
     <Content Include="production\common\app.js" />
-    <Content Include="production\common\headercontroller.js" />
-    <Content Include="production\common\indexcontroller.js" />
+    <Content Include="production\common\commonCtrl.js" />
     <Content Include="production\common\login.html" />
-    <Content Include="production\common\logincontroller.js" />
     <Content Include="production\common\main.html" />
-    <Content Include="production\common\maincontroller.js" />
-    <Content Include="production\common\menucontroller.js" />
     <Content Include="production\common\routeConfig.js" />
-    <Content Include="production\customerMgt\custcontroller.js" />
-    <Content Include="production\customerMgt\subscriptioncontroller.js" />
+    <Content Include="production\customerMgt\customerCtrl.js" />
+    <Content Include="production\customerMgt\subscriptionCtrl.js" />
     <Content Include="production\website\app.js" />
     <Content Include="production\website\index.html" />
     <Content Include="production\website\list-detail.html" />
@@ -105,6 +101,7 @@
     <Content Include="production\website\partial-about.html" />
     <Content Include="production\website\partial-home-list.html" />
     <Content Include="production\website\partial-home.html" />
+    <Content Include="production\website\routChangeTest.html" />
     <Content Include="production\website\scotchController.js" />
     <Content Include="production\website\table-data.html" />
     <Content Include="src\sass\main.sass" />

@@ -12,19 +12,15 @@
 	<!-- inquire input custom file -->
 	<script src="../assets/js/importRequired_head.js"></script>
 	<script src="../assets/js/importRequired.js"></script>
-	<script src="../assets/vendors/angular/angular.min.js"></script>
-	<script src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!--<script src="../assets/vendors/angular/angular.min.js"></script>
+	<script src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"></script>-->
 	<script src="routeConfig.js"></script>
-	<script src="indexcontroller.js"></script>
-	<script src="logincontroller.js"></script>
-	<script src="maincontroller.js"></script>
-	<script src="headercontroller.js"></script>
-	<script src="menucontroller.js"></script>
-	<script src="../customerMgt/subscriptioncontroller.js"></script>
-	<script src="../customerMgt/custcontroller.js"></script>
+	<script src="commonCtrl.js"></script>
+	<script src="../customerMgt/subscriptionCtrl.js"></script>
+	<script src="../customerMgt/customerCtrl.js"></script>
 </head>
 
-<body class="nav-md" ng-app="ecs" ng-controller="indexcontroller">
+<body class="nav-md" ng-app="ecs" ng-controller="indexCtrl">
 	<section ui-view></section>
 </body>
 </html>

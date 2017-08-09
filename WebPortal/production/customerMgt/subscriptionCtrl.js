@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('subscriptioncontroller', function ($scope, $state) {
+app.controller('subscriptionCtrl', function ($scope, $state) {
     $scope.goToSubDetail = function () {
         $state.go('main.subscriptionsDetail');
     };

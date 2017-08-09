@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-app.controller('logincontroller', function ($scope, $state) {
+app.controller('loginCtrl', function ($scope, $state) {
     $scope.doLogin = function () {
-        $state.go('main');
-        alert("haha");
+        $state.go('main.custMgt');
+        //alert("haha");
     };
 });

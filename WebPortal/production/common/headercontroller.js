@@ -1,5 +1,5 @@
 ﻿'use strict'
 
-app.controller('headercontroller',function($scope,$state){
+app.controller('headerCtrl',function($scope,$state){
 	
 })
