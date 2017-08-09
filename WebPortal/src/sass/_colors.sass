@@ -1,0 +1,43 @@
+$color-primary: #82C200
+$color-secondary: #585a5d
+
+$color-white: #FFFFFF
+$color-light-gray: #F0F0F0
+$color-gray: #ADB9C7
+$color-medium-gray: #6F757B
+$color-dim-gray: #47596C
+$color-dark-gray: #3C3E3F
+$color-black: #000000
+
+
+$color-red: #d9534f
+
+$color-blue: #557090
+
+$color-font-base: $color-medium-gray
+$color-success: $color-blue
+$color-danger: $color-red
+
+.btn-primary
+	background-color: $color-primary
+	border-color: darken($color-primary, 5)
+	&:hover,&:focus,&:active
+		background-color: darken($color-primary, 10) !important
+		border-color: darken($color-primary, 15) !important
+.btn-success
+	background-color: $color-success
+	border-color: darken($color-success, 5)
+	&:hover,&:focus,&:active
+		background-color: darken($color-success, 10) !important
+		border-color: darken($color-success, 15) !important
+
+
+$color-header-cm: $color-secondary
+
+//table
+$color-table-header: $color-secondary
+$color-table-bottom-border: darken($color-light-gray, 10)
+
+//modal
+$color-modal-header-default: $color-primary
+$color-modal-header-danger: $color-danger

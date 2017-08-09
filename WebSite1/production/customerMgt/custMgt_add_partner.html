@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WiAdvance ECS</title>
+	<!-- inquire input file -->
+	<script src="../assets/js/importRequired_head.js"></script>
+</head>
+
+<body class="nav-md" ng-app="">
+	<div class="container-fuild body">
+		<div class="main_container">
+			<!-- header -->
+			<div class="top-header small-padding">
+				<div class="row">
+					<nav class="col-xs-12 col-lg-10 col-centered">
+						<div class="col-xs-12 col-sm-6">
+							<div class="nav toggle pull-right icon-menu-close">
+								CLOSE <i class="fa fa-close"></i></a>
+							</div>
+							<div class="nav toggle icon-menu-hamburger visible-xs pull-left">
+								<i class="fa fa-bars"></i> MENU</a>
+							</div>
+							<img src="../assets/images/customer-logo.svg" class="logo-img">
+							<p class="portal-name  visible-xs">Customer Portal</p>
+						</div>
+
+						<ul class="nav navbar-nav col-xs-12 col-sm-6  hidden-xs">
+							<li class="pull-right">
+								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <span class="position">| WiAdvance System Admin</span>
+									<span class=" fa fa-angle-down"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-usermenu pull-right">
+									<li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+									<li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+									<li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+								</ul>
+							</li>
+						</ul>
+
+					</nav>
+				</div>
+			</div>
+			<!--top menu-->
+			<div class="top-menu">
+				<div class="top-header small-padding visible-xs">
+					<ul class="nav navbar-nav">
+						<li class="">
+							<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <br><span class="position">WiAdvance System Admin</span>
+								<span class=" fa fa-angle-down"></span>
+							</a>
+							<ul class="dropdown-menu dropdown-usermenu">
+								<li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+								<li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+								<li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="row CM small-padding">
+					<div class="col-xs-12 col-lg-10 col-centered">
+						<p class="col-sm-3 col-md-2 portal-name  hidden-xs">Customer Portal</p>
+						<ul class="col-sm-6 col-md-8">
+							<!--<li>custom item 1</li>
+							<li>custom item 2</li>-->
+						</ul>
+						<ul class="col-sm-3 col-md-2 hidden-xs">
+							<li id="ecsMenu" class="pull-right"> MENU <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row ECS block-padding" id="ECSitem">
+					<div class="col-xs-12 col-lg-10 col-centered swiper swiper-container">
+						<div class="swiper-wrapper swiper-wrapper-xs">
+							<ul class="col-xs-6 col-sm-2 swiper-slide">
+								<i class="icon-user"></i>
+								<p class="title">客戶管理</p>
+								<li><a href="custMgt_list.html">客戶資料管理</a></li>
+								<li><a href="subscriptions_list.html">客戶訂閱管理</a></li>
+								<li><a href="keystore_list.html">Keystore</a></li>
+							</ul>
+							<ul class="col-xs-6 col-sm-2 swiper-slide ">
+								<i class="icon-chart"></i>
+								<p class="title">用量查詢管理</p>
+								<li>每月使用量報表</li>
+								<li>每日使用量報表</li>
+								<li><a href="../report/report_usageTrend.html">目前用量查詢報表</a></li>
+							</ul>
+							<div class="clearfix visible-xs"></div>
+							<ul class="col-xs-6 col-sm-2 swiper-slide ">
+								<i class="icon-warning"></i>
+								<p class="title">告警服務</p>
+								<li>使用量告警通知</li>
+								<li><a href="../usageAlert/usageAlert_budget_setting.html">用量警示設定</a></li>
+							</ul>
+							<ul class="col-xs-6 col-sm-2 swiper-slide ">
+								<i class="icon-discount"></i>
+								<p class="title">費率／折扣</p>
+								<li><a href="../rate/rateCard_list.html">費率查詢</a></li>
+								<li><a href="../rate/discount_setting.html">客戶折扣設定</a></li>
+							</ul>
+							<div class="clearfix visible-xs"></div>
+							<ul class="col-xs-6 col-sm-2 swiper-slide ">
+								<i class="icon-invoice"></i>
+								<p class="title">帳單管理</p>
+								<li>客戶帳單查詢</li>
+								<li>帳務設定</li>
+							</ul>
+							<ul class="col-xs-6 col-sm-2 swiper-slide ">
+								<i class="icon-lock"></i>
+								<p class="title">權限管理</p>
+								<li><a href="../permissionMgt/permission_list_customer.html">使用者權限管理</a></li>
+							</ul>
+						</div>
+						<div class="swiper-button-prev hidden-xs"><i class="icon-slide-arrow-left"></i></div>
+						<div class="swiper-button-next hidden-xs"><i class="icon-slide-arrow-right"></i></div>
+					</div>
+				</div>
+			</div>
+			<!--/top menu-->
+			<!--/header -->
+			<!-- page content -->
+			<div class="page-container block-padding">
+				<div class="row col-xs-12 col-lg-10 col-centered">
+					<!--page title-->
+					<div class="page-title col-xs-12">
+						<div class="title_left">
+							<h3>Add Reseller/Partner</h3>
+							<h5>客戶管理 <small>You're just a few steps from creating a Reseller / Partner.</small></h5>
+						</div>
+					</div>
+					<!--/page title-->
+					<!--data content-->
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="x_panel">
+								<div class="x_content">
+									<!-- Smart Wizard -->
+									<div id="wizard" class="form_wizard wizard_horizontal">
+										<ul class="wizard_steps">
+											<li>
+												<a href="#step-1">
+													<span class="step_no">1</span>
+													<span class="step_descr">
+														Step 1<br />
+														<small>Profile</small>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#step-2">
+													<span class="step_no">2</span>
+													<span class="step_descr">
+														Step 2<br />
+														<small>Admin Permission</small>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#step-3">
+													<span class="step_no">3</span>
+													<span class="step_descr">
+														Step 3<br />
+														<small>Keystore</small>
+													</span>
+												</a>
+											</li>
+											<!--<li>
+												<a href="#step-4">
+													<span class="step_no">4</span>
+													<span class="step_descr">
+														Step 4<br />
+														<small>Keystore</small>
+													</span>
+												</a>
+											</li>-->
+										</ul>
+										<!--step1-->
+										<div id="step-1">
+											<h2 class="StepTitle">Step 1. Profile</h2>
+											<p class="descr-text">description...</p>
+											<form class="form-horizontal  form-label-right">
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Company Type</label>
+													<div class="col-sm-10">
+														<select name="" class="form-control">
+															<option value="">Reseller</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Company Name</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control" placeholder="Enter Company Name">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Country / Region</label>
+													<div class="col-sm-2">
+														<select name="" class="form-control pull-left" disabled>
+															<option value="">Taiwan</option>
+														</select>
+													</div>
+													<label class="col-sm-1">State</label>
+													<div class="col-sm-2">
+														<input type="text" class="form-control">
+													</div>
+													<label class="col-sm-1">Zipcode</label>
+													<div class="col-sm-2">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Address</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Tax ID</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Primary Domain Name</label>
+													<div class="col-sm-10">
+														<div class="input-group">
+															<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+															<span class="input-group-addon" id="basic-addon3">.onmicrosoft.com</span>
+														</div>
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Contact Name</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4">Phone No.</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+													<label class="col-sm-4">Mobile</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">E-mail</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="form-group col-sm-12">
+													<label class="col-sm-2">Status</label>
+													<div class="col-sm-10">
+														<label class="radio-inline"><input type="radio" class="flat" name="Status"> Active</label>
+														<label class="radio-inline"><input type="radio" class="flat" name="Status"> Disable</label>
+													</div>
+												</div>
+											</form>
+										</div>
+										<!--step2-->
+										<div id="step-2">
+											<h2 class="StepTitle">Step 2. Admin Permission</h2>
+											<p class="descr-text">description...</p>
+											<form class="form-horizontal form-label-right">
+												<div class="form-group">
+													<label class="control-label col-sm-2">Company Name</label>
+													<div class="col-sm-10">
+														<p>Waremelon</p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-2">Name</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control" value="Messina Cake">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-2">Email</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control" value="admin@onmicrosoft.com">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-2">Role</label>
+													<div class="col-sm-10">
+														<p>Partner Admin</p>
+													</div>
+												</div>
+											</form>
+										</div>
+										<!--step3-->
+										<div id="step-3">
+											<h2 class="StepTitle">Step 3. Keystore</h2>
+											<p class="descr-text">description...</p>
+											<div class="form-group">
+												<label class="control-label col-sm-2">Customer Type</label>
+												<div class="col-sm-10">
+													<label class="radio-inline"><input type="radio" class="flat" name="customerType"> CSP</label>
+													<label class="radio-inline"><input type="radio" class="flat" name="customerType"> EA</label>
+													<label class="radio-inline"><input type="radio" class="flat" name="customerType"> OPEN</label>
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<label class="control-label col-sm-2">Client ID</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" value="ffff">
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<label class="control-label col-sm-2">Client Secret</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" value="ffff">
+												</div>
+											</div>
+											<div class="form-group col-sm-12">
+												<label class="col-sm-2">Status</label>
+												<div class="col-sm-10">
+													<label class="radio-inline"><input type="radio" class="flat" name="Status"> Active</label>
+													<label class="radio-inline"><input type="radio" class="flat" name="Status"> Disable</label>
+												</div>
+											</div>
+										</div>
+										<!--step4-->
+										<!--<div id="step-4">
+											<h2 class="StepTitle">Step 4. Keystore</h2>
+											<p class="descr-text">description...</p>
+										</div>-->
+									</div>
+									<!-- End SmartWizard -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/data content-->
+				</div>
+			</div>
+			<!--/page content -->
+		</div>
+	</div>
+
+	<!-- footer-->
+	<footer>
+		<div class="container-fuild">
+			<div class="row col-xs-12 col-lg-10 col-centered">
+				<div class="col-xs-6 col-sm-3">
+					<P>&copy; Wiadvance 2016</P>
+				</div>
+				<div class="col-xs-6 col-sm-9">
+					<div class="dropup pull-right">
+						<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#">中文 - 繁體</a></li>
+							<li><a href="#">中文 - 简体</a></li>
+							<li><a href="#">English - US</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	<!--modal-->
+	<div class="modal fade" id="cancel-msg" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header modal-header-danger">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-warning"></i> Cancel</h4>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to abandon your edits?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-chevron-left"></i> Cancel</button>
+					<button type="button" class="btn btn-danger" onclick="location.href='custMgt_list.html'"><i class="fa fa-check"></i> OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/modal-->
+	<!-- inquire input custom file -->
+	<script src="../assets/js/importRequired.js"></script>
+
+	<!-- Datatables -->
+	<script>
+		$(document).ready(function () {
+			$('#datatable-responsive').DataTable({
+				lengthChange: false,
+				searching: false,
+				order: [[2, "asc"]],
+				columnDefs: [{ "orderable": false, "targets": 3 }]
+			});
+		});
+	</script>
+	<!-- /Datatables -->
+	<!--active js-->
+	<script>
+		$('#wizard').smartWizard();
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_flat-green',
+			radioClass: 'iradio_flat-green'
+		});
+	</script>
+	<!--/active js-->
+	<!--license input control-->
+	<script>
+		$('.license-input').hide();
+		$('#sub-items label').click(function () {
+			if (this.find('.sub-item').checked) {
+				$(this).parent().sibling('.license-input').show();
+
+				alert(change)
+			}
+			alert(checked)
+		});
+	</script>
+
+	<script>
+		$(".info-update").click(function (e) {
+			wizardContent.smartWizard("goToStep", 1);
+		});
+		$(".sub-update").click(function (e) {
+			wizardContent.smartWizard("goToStep", 2);
+		});
+	</script>
+</body>
+
+</html>

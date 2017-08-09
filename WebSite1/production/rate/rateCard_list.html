@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiAdvance ECS</title>
+    <!-- inquire input file -->
+    <script src="../assets/js/importRequired_head.js"></script>
+</head>
+
+<body class="nav-md" ng-app="">
+    <div class="container-fuild body">
+        <div class="main_container">
+            <!-- header -->
+            <div class="top-header small-padding">
+                <div class="row">
+                    <nav class="col-xs-12 col-lg-10 col-centered">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="nav toggle pull-right icon-menu-close" >CLOSE <i class="fa fa-close"></i></a>
+                            </div>
+                            <div class="nav toggle icon-menu-hamburger visible-xs pull-left"><i class="fa fa-bars"></i> MENU</a>
+                            </div>
+                            <img src="../assets/images/customer-logo.svg" class="logo-img">
+                            <p class="portal-name  visible-xs">Customer Portal</p>
+                        </div>
+                        
+                        <ul class="nav navbar-nav col-xs-12 col-sm-6  hidden-xs">
+                            <li class="pull-right">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <span class="position">| WiAdvance System Admin</span>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                    <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                    <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </div>
+            <!--top menu-->
+            <div class="top-menu">
+                <div class="top-header small-padding visible-xs">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <br><span class="position">WiAdvance System Admin</span>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu">
+                                <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row CM small-padding">
+                    <div class="col-xs-12 col-lg-10 col-centered">
+                        <p class="col-sm-3 col-md-2 portal-name  hidden-xs">Customer Portal</p>
+                        <ul class="col-sm-6 col-md-8">
+                            <!--<li>custom item 1</li>
+                            <li>custom item 2</li>-->
+                        </ul>
+                        <ul class="col-sm-3 col-md-2 hidden-xs">
+                            <li id="ecsMenu" class="pull-right"> MENU <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row ECS block-padding" id="ECSitem">
+                    <div class="col-xs-12 col-lg-10 col-centered swiper swiper-container">
+                        <div class="swiper-wrapper swiper-wrapper-xs">
+                            <ul class="col-xs-6 col-sm-2 swiper-slide">
+                                <i class="icon-user"></i>
+                                <p class="title">客戶管理</p>
+                                <li><a href="../customerMgt/custMgt_list.html">客戶資料管理</a></li>
+                                <li><a href="../customerMgt/subscriptions_list.html">客戶訂閱管理</a></li>
+                                <li><a href="../customerMgt/keystore_list.html">Keystore</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-chart"></i>
+                                <p class="title">用量查詢管理</p>
+                                <li>每月使用量報表</li>
+                                <li>每日使用量報表</li>
+                                <li><a href="../report/report_usageTrend.html">目前用量查詢報表</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-warning"></i>
+                                <p class="title">告警服務</p>
+                                <li>使用量告警通知</li>
+                                <li><a href="../usageAlert/usageAlert_budget_setting.html">用量警示設定</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-discount"></i>
+                                <p class="title">費率／折扣</p>
+                                <li><a href="rateCard_list.html">費率查詢</a></li>
+                                <li><a href="../rate/discount_setting.html">客戶折扣設定</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-invoice"></i>
+                                <p class="title">帳單管理</p>
+                                <li>客戶帳單查詢</li>
+                                <li>帳務設定</li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-lock"></i>
+                                <p class="title">權限管理</p>
+                                <li><a href="../permissionMgt/permission_list_customer.html">使用者權限管理</a></li>
+                            </ul>                            
+                        </div>
+                        <div class="swiper-button-prev hidden-xs"><i class="icon-slide-arrow-left"></i></div>
+                        <div class="swiper-button-next hidden-xs"><i class="icon-slide-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!--/top menu-->
+            <!--/header -->
+
+            <!-- page content -->
+            <div class="page-container block-padding">
+                <div class="row col-xs-12 col-lg-10 col-centered">
+                    <div class="page-title col-xs-12">
+                        <div class="title_left">
+                            <h3>Rate Card</h3>
+                            <h5>費率／折扣 <small>Manage your resellers and customers</small></h5>
+                        </div>
+                    </div>
+                    <!--search-->
+                    <div class="search-block col-xs-12">
+                        <form class="form-inline">
+                            <div class="form-group col-sm-5">
+                                <label class="col-sm-12">Choose Ratecard Type & Period</label>
+                                <div class="col-sm-12">
+                                    <select class="form-control">
+                                        <option>Reatecard Type</option>
+                                        <option>CSP</option>
+                                        <option>EA</option>
+                                    </select>
+                                    <div class="input-group input-align-middle">
+                                        <input type="text" class="form-control" name="datepicker" placeholder="2017/7/1 - 2017/7/30"  aria-describedby="sizing-addon1" size="30">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-7">
+                                <label class="col-sm-12">Choose Specific Resource</label>
+                                <div class="col-sm-12">
+                                    <select class="form-control">
+                                        <option>Resource Category</option>
+                                    </select>
+                                    <select class="form-control">
+                                        <option>Resource Sub-Category</option>
+                                    </select>
+                                    <select class="form-control">
+                                        <option>Resource Name</option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary pull-right btn-xs-block"><i class="fa fa-search"></i> Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/search-->
+
+                    <!--data grid-->
+                    <table id="datatable-responsive" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Resource Category</th>
+                                <th>Resource Sub-Categroy</th>
+                                <th>Resource Name</th>
+                                <th>Resource Region</th>
+                                <th>Resource Rate</th>
+                                <th>Effective Date</th>
+                                <th>Create Date</th>
+                                <th>Update Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2017/7/26</td>
+                                <td>AA</td>
+                                <td>aa</td>
+                                <td>a001</td>
+                                <td>TW</td>
+                                <td>20%</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                            </tr>
+                            <tr>
+                                <td>2017/7/26</td>
+                                <td>AA</td>
+                                <td>aa</td>
+                                <td>a001</td>
+                                <td>TW</td>
+                                <td>20%</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                            </tr>
+                            <tr>
+                                <td>2017/7/26</td>
+                                <td>AA</td>
+                                <td>aa</td>
+                                <td>a001</td>
+                                <td>TW</td>
+                                <td>20%</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                            </tr>
+                            <tr>
+                                <td>2017/7/26</td>
+                                <td>AA</td>
+                                <td>aa</td>
+                                <td>a001</td>
+                                <td>TW</td>
+                                <td>20%</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                            </tr>
+                            <tr>
+                                <td>2017/7/26</td>
+                                <td>AA</td>
+                                <td>aa</td>
+                                <td>a001</td>
+                                <td>TW</td>
+                                <td>20%</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                                <td>2017/7/26</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--/data grid-->
+                </div>
+            </div>
+            <!--/page content -->
+        </div>
+    </div>
+
+    <!-- footer-->
+    <footer>
+        <div class="container-fuild">
+            <div class="row col-xs-12 col-lg-10 col-centered">
+                <div class="col-xs-6 col-sm-3">
+                    <P>&copy; Wiadvance 2016</P>
+                </div>
+                <div class="col-xs-6 col-sm-9">
+                    <div class="dropup pull-right">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#">中文 - 繁體</a></li>
+                            <li><a href="#">中文 - 简体</a></li>
+                            <li><a href="#">English - US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/footer-->
+
+    <!-- inquire input custom file -->
+    <script src="../assets/js/importRequired.js"></script>
+
+    <!-- Datatables -->
+    <script>
+    $(document).ready(function() {
+        $('#datatable-responsive').DataTable({
+            lengthChange: false,
+            searching: false,
+            order: false,
+            bSort: false
+        });
+    });
+    </script>
+    <!-- /Datatables -->
+
+    <script>
+        $('input[type=radio]').addClass('flat');
+    </script>
+
+    <script type="text/javascript">
+        $('.tree').treegrid();
+    </script>
+
+    <!--daterangepicker-->
+        <script>
+        $('input[name="datepicker"]').daterangepicker({
+            startDate: "07/01/2017",
+            endDate: "07/31/2017",
+        });
+        
+        </script>
+</body>
+
+
+</body>
+
+</html>

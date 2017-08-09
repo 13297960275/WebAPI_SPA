@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiAdvance ECS</title>
+    <!-- inquire input file -->
+    <script src="../assets/js/importRequired_head.js"></script>
+</head>
+
+<body class="nav-md" ng-app="">
+    <div class="container-fuild body">
+        <div class="main_container">
+            <!-- header -->
+            <div class="top-header small-padding">
+                <div class="row">
+                    <nav class="col-xs-12 col-lg-10 col-centered">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="nav toggle pull-right icon-menu-close" >CLOSE <i class="fa fa-close"></i></a>
+                            </div>
+                            <div class="nav toggle icon-menu-hamburger visible-xs pull-left"><i class="fa fa-bars"></i> MENU</a>
+                            </div>
+                            <img src="../assets/images/customer-logo.svg" class="logo-img">
+                            <p class="portal-name  visible-xs">Customer Portal</p>
+                        </div>
+                        
+                        <ul class="nav navbar-nav col-xs-12 col-sm-6  hidden-xs">
+                            <li class="pull-right">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <span class="position">| WiAdvance System Admin</span>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                    <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                    <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </div>
+            <!--top menu-->
+            <div class="top-menu">
+                <div class="top-header small-padding visible-xs">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <br><span class="position">WiAdvance System Admin</span>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu">
+                                <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row CM small-padding">
+                    <div class="col-xs-12 col-lg-10 col-centered">
+                        <p class="col-sm-3 col-md-2 portal-name  hidden-xs">Customer Portal</p>
+                        <ul class="col-sm-6 col-md-8">
+                            <!--<li>custom item 1</li>
+                            <li>custom item 2</li>-->
+                        </ul>
+                        <ul class="col-sm-3 col-md-2 hidden-xs">
+                            <li id="ecsMenu" class="pull-right"> MENU <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row ECS block-padding" id="ECSitem">
+                    <div class="col-xs-12 col-lg-10 col-centered swiper swiper-container">
+                        <div class="swiper-wrapper swiper-wrapper-xs">
+                            <ul class="col-xs-6 col-sm-2 swiper-slide">
+                                <i class="icon-user"></i>
+                                <p class="title">客戶管理</p>
+                                <li><a href="../customerMgt/custMgt_list.html">客戶資料管理</a></li>
+                                <li><a href="../customerMgt/subscriptions_list.html">客戶訂閱管理</a></li>
+                                <li><a href="../customerMgt/keystore_list.html">Keystore</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-chart"></i>
+                                <p class="title">用量查詢管理</p>
+                                <li>每月使用量報表</li>
+                                <li>每日使用量報表</li>
+                                <li><a href="../report/report_usageTrend.html">目前用量查詢報表</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-warning"></i>
+                                <p class="title">告警服務</p>
+                                <li>使用量告警通知</li>
+                                <li><a href="../usageAlert/usageAlert_budget_setting.html">用量警示設定</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-discount"></i>
+                                <p class="title">費率／折扣</p>
+                                <li><a href="rateCard_list.html">費率查詢</a></li>
+                                <li><a href="discount_setting.html">客戶折扣設定</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-invoice"></i>
+                                <p class="title">帳單管理</p>
+                                <li>客戶帳單查詢</li>
+                                <li>帳務設定</li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-lock"></i>
+                                <p class="title">權限管理</p>
+                                <li><a href="../permissionMgt/permission_list_customer.html">使用者權限管理</a></li>
+                            </ul>                            
+                        </div>
+                        <div class="swiper-button-prev hidden-xs"><i class="icon-slide-arrow-left"></i></div>
+                        <div class="swiper-button-next hidden-xs"><i class="icon-slide-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!--/top menu-->
+            <!--/header -->
+
+            <!-- page content -->
+            <div class="page-container block-padding">
+                <div class="row col-xs-12 col-lg-10 col-centered">
+                    <div class="page-title col-xs-12">
+                        <div class="title_left">
+                            <h3>Discount Management</h3>
+                            <h5>費率 ／ 折扣 <small>Function Description...</small></h5>
+                        </div>
+                    </div>
+                    <!--search-->
+                    <div class="search-block col-xs-12">
+                        <form class="form-inline">
+                            <div class="form-group col-sm-4">
+                                <label>Partner</label>
+                                <select class="form-control">
+                                    <option>WiAdvance</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label>Customer</label>
+                                <select class="form-control">
+                                    <option>金財通商務科技股份有限公司</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-xs-block"><i class="fa fa-search"></i> Search</button> 
+                            </div>
+                        </form>
+                    </div>
+                    <!--/search-->
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="well well-summary">
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <h4>Set Discount for</h4>
+                                        <h3>金財通商務科技股份有限公司</h3>
+                                    </div>
+                                    <div class="col-md-6 text-left">
+                                        <form class="form-inline">
+                                          <div class="form-group">
+                                            <label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+                                            <div class="input-group input-group-lg">
+                                              <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="" value="20">
+                                              <div class="input-group-addon">% OFF</div>
+                                              <span class="input-group-btn">
+                                                    <button class="btn btn-primary"><i class="fa fa-check"></i> Apply</button>
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <br><br>
+                                          <p>Effective Date: 20170715<br>last updated by: cherry tsai 20170707 20:00</p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--data grid-->
+                    <div class="row space-top-2">
+                        <div class="col-sm-12">
+                            <h2>List of Subscriptions</h2>
+                            <table id="datatable-responsive" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Subscription</th>
+                                        <th class="text-center">Subscription Discount</th>
+                                        <th class="text-center">Total Discount</th>
+                                        <th class="text-center">Effective Date</th>
+                                        <th>Last Updated by</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Microsoft Azure</td>
+                                        <td class="text-right">0%</td>
+                                        <td class="text-right">20%</td>
+                                        <td></td>
+                                        <td>Cherry Tsai 2017/0701 20:00</td>
+                                        <td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CHANEL-電子發票</td>
+                                        <td>
+                                            <form class="form-inline">
+                                              <div class="form-group pull-right">
+                                                <label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+                                                <div class="input-group pull-right">
+                                                  <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="" value="5">
+                                                  <div class="input-group-addon">%</div>
+                                                </div>
+                                              </div>
+                                            </form>
+                                        </td>
+                                        <td class="text-right">25%</td>
+                                        <td></td>
+                                        <td>Cherry Tsai 2017/0701 20:00</td>
+                                        <td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-save"></i> Save</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-chevron-left"></i> Cancel</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row space-top-2">
+                        <div class="col-sm-12">
+                            <h2>List of Resource</h2>
+                            <!--search-->
+                            <div class="search-block col-xs-12">
+                                <form class="form-inline">
+                                    <div class="form-group col-sm-3">
+                                        <label>Subscription</label>
+                                        <select class="form-control">
+                                            <option>Subscription</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-8">
+                                        <label>Specific Resource</label>
+                                        <select class="form-control">
+                                            <option>Resource Category</option>
+                                        </select>
+                                        <select class="form-control">
+                                            <option>Resource sub-Category</option>
+                                        </select>
+                                        <select class="form-control">
+                                            <option>Resource Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-xs-block"><i class="fa fa-search"></i> Search</button> 
+                                    </div>
+                                </form>
+                            </div>
+                            <!--/search-->
+                            <table id="datatable-responsive2" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Category</th>
+                                        <th>sub-Category</th>
+                                        <th>Resource Name</th>
+                                        <th>Region</th>
+                                        <th>Rate</th>
+                                        <th class="text-center">Discount</th>
+                                        <th class="text-center">Total Discount</th>
+                                        <th class="text-center">Last Update by</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2017/0701</td>
+                                        <td>aa</td>
+                                        <td>aa01</td>
+                                        <td>aa01-0984304852</td>
+                                        <td>Taiwan</td>
+                                        <td></td>
+                                        <td class="text-right">0%</td>
+                                        <td class="text-right">20%</td>
+                                        <td>Cherry Tsai 2017/0701 20:00</td>
+                                        <td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-trash"></i> Delete</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017/0701</td>
+                                        <td>bb</td>
+                                        <td>bb09</td>
+                                        <td>bb09-32464567876</td>
+                                        <td>Taiwan</td>
+                                        <td class="text-right"></td>
+                                        <td class="text-right">
+                                            <form class="form-inline">
+                                              <div class="form-group">
+                                                <label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+                                                <div class="input-group pull-right">
+                                                  <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="" value="5">
+                                                  <div class="input-group-addon">%</div>
+                                                </div>
+                                              </div>
+                                            </form>
+                                        </td>
+                                        <td class="text-right">25%</td>
+                                        <td>Cherry Tsai 2017/0701 20:00</td>
+                                        <td><a href="#" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#apply-msg"><i class="fa fa-save"></i> Save</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-chevron-left"></i> Cancel</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/data grid-->
+
+                </div>
+            </div>
+            <!--/page content -->
+        </div>
+    </div>
+
+    <!-- footer-->
+    <footer>
+        <div class="container-fuild">
+            <div class="row col-xs-12 col-lg-10 col-centered">
+                <div class="col-xs-6 col-sm-3">
+                    <P>&copy; Wiadvance 2016</P>
+                </div>
+                <div class="col-xs-6 col-sm-9">
+                    <div class="dropup pull-right">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#">中文 - 繁體</a></li>
+                            <li><a href="#">中文 - 简体</a></li>
+                            <li><a href="#">English - US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/footer-->
+
+    <!--modal-->
+    <div class="modal fade" id="apply-msg" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><i class="fa fa-info-circle"></i> 訊息</h4>
+          </div>
+          <div class="modal-body">
+            <p>Apply this resource discount to this subscription "SUBSCRIPTION NAME"?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Cancel</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/modal-->
+
+
+    <!-- inquire input custom file -->
+    <script src="../assets/js/importRequired.js"></script>
+
+    <!-- Datatables -->
+    <script>
+        $('#datatable-responsive, #datatable-responsive2').DataTable({
+            lengthChange: false,
+            searching: false,
+            order: false,
+            bSort: false
+        });
+    </script>
+    <!-- /Datatables -->
+
+    <script type="text/javascript">
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+          });
+    </script>
+
+
+</body>
+
+</html>

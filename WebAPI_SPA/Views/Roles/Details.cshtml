@@ -1,0 +1,66 @@
+﻿@model WebAPI_SPA.Models.System.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createDatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createDatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updateUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updateUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updateDatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updateDatetime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

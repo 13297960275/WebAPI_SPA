@@ -1,0 +1,221 @@
+.align-right
+	text-align: right
+
+.col-centered
+	float: none
+	margin: 0 auto
+.page-container
+	background: $color-white
+	border-top: 1px solid $color-light-gray
+	overflow: auto
+	h2
+		font-weight: 500
+		font-size: 140%
+		color: darken($color-font-base, 7)
+
+.block-padding
+	padding: $block-padding
+
+.user-profile img
+	width: 29px
+	height: 29px
+	border-radius: 50%
+	margin-right: 10px
+
+#ecsMenu
+	cursor: pointer
+.page-title
+	border-bottom: 1px solid $color-gray
+	margin-bottom: 1rem
+	h3
+		color: $color-primary
+		font-size: 200%
+		line-height: 1.5
+	h5
+		color: darken($color-font-base, 5)
+		font-size: 120%
+		small
+			border-left: 10px solid $color-light-gray
+			padding-left: 1rem
+			margin-left: 2rem
+			+xs
+				width: 100%
+				margin-left: 0
+				margin-top: 1rem
+				margin-bottom: 1rem
+				line-height: 1.5
+				display: block
+	.descr-text
+		margin-left: 1.5rem
+		margin-right: 1.5rem
+
+.descr-text
+	color: $color-primary
+	font-weight: normal
+
+.checkbox-list
+	border: 0
+	padding-top: 2rem
+	.form-group
+		margin: 0.5rem
+	li
+		list-style: none
+		line-height: 2
+	.license-input
+		input[type=text]
+			width: 10rem
+			margin-right: 1rem
+#wizard
+	h4
+		color: $color-primary
+		border-bottom: 1px solid $color-light-gray
+		padding-bottom: 0.5rem
+		margin-top: 2rem
+	.descr-text
+		margin-bottom: 4rem !important
+		color: lighten($color-font-base, 20)
+	.stepContainer
+		height: auto !important
+.wizard_horizontal ul.wizard_steps
+	.modal &
+		margin-bottom: 0 !important
+
+.form-button
+	&-footer
+		float: left
+		border-top: 1px solid $color-light-gray
+		margin-top: 2rem
+		padding: 2rem
+		width: 100%
+		display: block
+		@extend .align-right
+
+
+@mixin circle($width, $color) 
+	width: $width
+	height: $width
+	background: $color
+	color: $color-white
+	-webkit-border-radius: $width/2
+	-moz-border-radius: $width/2
+	border-radius: $width/2
+	line-height: $width/2
+	&:before
+		content: ""
+		display: block
+		+xs
+			padding-top: 100% 	/* initial ratio of 1:1*/
+		+sm
+			padding-top: 100% 	/* initial ratio of 1:1*/
+
+.circle
+	text-align: center
+	vertical-align: middle
+	font-weight: 100
+	position: relative
+	+md
+		@include circle(100%, $color-success)
+	+sm
+		@include circle(100%, $color-success)
+	+xs
+		@include circle(100%, $color-success)
+		margin: 1rem
+	label
+		position: absolute
+		top: 20%
+		left: 5%
+		font-size: 50%
+		font-weight: 500
+		display: block
+		padding-bottom: 0.5rem
+		border-bottom: 1px solid lighten($color-success, 10)
+		line-height: 1
+		padding-top: -30%
+		width: 90%
+		margin: auto
+		small
+			font-weight: 100
+			display: block
+			line-height: 2
+	.num
+		font-size: 280%
+		position: absolute
+		bottom: 25%
+		left: 5%
+		width: 90%
+		+xs
+			font-size: 400%
+			bottom: 30%
+	
+
+
+.formula-box
+	line-height: 12
+	text-align: center
+	color: $color-success
+
+.date-period
+	text-align: center
+	.panel
+		border: 0
+		&-heading
+			background: $color-success
+			color: $color-white
+		&-body
+			color: $color-success
+			font-weight: 300
+			height: 80px
+			line-height: 1.2
+			.text-date
+				font-size: 250%
+			.text-year
+				font-size: 70%
+
+.well
+	&-summary
+		background: lighten($color-dark-gray, 30)
+		border: 1px solid $color-light-gray
+		color: $color-white
+		text-align: center
+		overflow: auto
+		.progress
+			background: lighten($color-dark-gray, 20)
+			height: 4rem
+			line-height: 4rem
+			border-radius: 2rem
+			&-bar
+				font-size: 150%
+				line-height: 2
+		large
+			font-size: 200%
+	&-charts
+		background: lighten($color-light-gray, 3)
+		border: 1px solid $color-light-gray
+
+.chart
+	width: 100%
+	height: auto
+	margin: 2rem auto
+
+.search-block
+	padding-top: 1.5rem
+	border-radius: 0.3rem
+	margin-bottom: 2rem
+	float: left
+	background: $color-light-gray
+	vertical-align: middle !important
+	//border: 1px solid darken($color-light-gray, 2)
+	label
+		vertical-align: middle !important
+
+
+.modal-header
+	i
+		font-size: 120%
+	&-default
+		background-color: $color-modal-header-default !important
+		color: $color-white !important
+	&-danger
+		background-color: $color-modal-header-danger !important
+		color: $color-white !important
+

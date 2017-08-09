@@ -1,0 +1,106 @@
+.top-header
+	background-color: $color-white
+	+xs
+		text-align: center
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 1040
+		width: 100%
+		border-bottom: 1px solid $color-light-gray
+	.logo-img
+		width: auto
+		height: 2rem
+		margin-top: 1rem
+		+xs
+			margin: atuo
+			height: 1.5rem
+	.nav
+		line-height: 60px
+		cursor: pointer
+		&:hover,&:focus
+			color: $color-primary
+	.icon-menu-close
+		visibility: hidden
+
+.top-menu
+	+xs
+		display: none
+		position: absolute
+		left: 0
+		top: 60px
+		bottom: 0
+		width: 100%
+		height: 100vh
+		z-index: 999
+		line-height: 2.5
+		background: $color-white
+		border-top: 1px solid $color-light-gray
+	.top-header
+		position: relative
+		width: 100%
+
+	.CM
+		background: $color-header-cm
+		color: $color-white
+		line-height: 40px
+		li
+			display: inline-block
+			padding-left: 2rem
+			padding-right: 2rem
+			+xs
+				width: 100%
+				border-bottom: 1px solid $color-white
+				line-height: 3
+				&:last-child
+					border-bottom: 0
+		+xs
+			display: none
+
+		.portal-name
+			font-size: 120%
+		p
+			margin-bottom: 0 !important //reset less
+	.ECS
+		background: $color-light-gray
+		text-align: center
+		color: lighten($color-font-base, 20)
+		.title
+			color: $color-primary
+			font-size: 120%
+		+xs
+			display: block
+			ul
+				margin: 1.5rem auto
+		i
+			font-size: 300%
+			margin-bottom: 1rem
+			color: $color-primary
+			line-height: 1.2
+		a
+			color: $color-font-base
+			&:hover, &:focus, &:active
+				color: darken($color-font-base, 20)
+
+.navbar-nav
+	.open 
+		.dropdown-menu
+			width: 100%
+		a, &:hover, &:focus
+			border-color: $color-light-gray !important
+			color: $color-primary
+		+xs
+			.user-profile
+				border-bottom: 1px solid $color-light-gray
+	li
+		text-align: center
+		border-top: 1px solid $color-light-gray
+		line-height: 2.5
+		&:first-child
+			border-top: 0
+		a
+			background-color: $color-white !important
+		+xs
+			width: auto
+			display: inline-block
+			border: 0

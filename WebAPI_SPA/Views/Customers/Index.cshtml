@@ -1,0 +1,167 @@
+﻿@model IEnumerable<WebAPI_SPA.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.parentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.commerceTenantId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.domanName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.taxId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactWindow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createDatetime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updateUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updateDatetime)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.parentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.commerceTenantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.domanName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taxId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactWindow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createDatetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updateUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updateDatetime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

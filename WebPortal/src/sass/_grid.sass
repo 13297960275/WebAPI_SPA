@@ -1,0 +1,91 @@
+// media query
+=phone
+	@media (max-width:480px)
+		@content
+=xs
+	@media (max-width:767px)
+		@content
+=sm
+	@media (min-width:768px)
+		@content
+=md
+	@media (min-width:992px)
+		@content
+=lg
+	@media (min-width:1200px)
+		@content
+
+// row
+=marginLR($num)
+	margin-left: $num
+	margin-right: $num
+=paddingLR($num)
+	padding-left: $num
+	padding-right: $num
+.row.row-sticky
+	+marginLR(0)
+	> [class^="col-"]
+		+paddingLR(0)
+.row.row-xs
+	+marginLR(-0.5rem)
+	> [class^="col-"]
+		+paddingLR(0.5rem)
+.row.row-sm
+	+marginLR(-1rem)
+	> [class^="col-"]
+		+paddingLR(1rem)
+.row.row-md
+	+marginLR(-2rem)
+	> [class^="col-"]
+		+paddingLR(2rem)
+.row.row-lg
+	+marginLR(-4rem)
+	> [class^="col-"]
+		+paddingLR(4rem)
+
+.row-md-5
+	> [class^="col-"]
+		+md
+			width: 20%
+
+
+// container
+.container-xs
+	max-width: 300px
+.container-sm
+	max-width: 520px
+.container-md
+	max-width: 720px
+.container-lg
+	max-width: 900px
+
+// space
+=marginB($num)
+	margin-bottom: ($num) !important
+=marginT($num)
+	margin-top: $num !important
+.space-xs
+	+marginB(.5rem)
+.space-1
+	+marginB(1rem)
+.space-2
+	+marginB(2rem)
+.space-3
+	+marginB(4rem)
+.space-4
+	+marginB(8rem)
+.space-top-xs
+	+marginT(.5rem)
+.space-top-1
+	+marginT(1rem)
+.space-top-2
+	+marginT(2rem)
+.space-top-3
+	+marginT(4rem)
+.space-top-4
+	+marginT(8rem)
+
+.visible-phone
+	display: none
+	+phone
+		display: block

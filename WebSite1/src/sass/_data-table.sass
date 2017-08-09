@@ -1,0 +1,238 @@
+.bulk-actions
+  display: none
+
+table
+  .countries_list
+    width: 100%
+    td
+      padding: 0 10px
+      line-height: 30px
+      border-top: 1px solid #eeeeee
+
+.dataTables_paginate
+  a
+    padding: 6px 9px !important
+    background: #ddd !important
+    border-color: #ddd !important
+
+
+.dataTable
+  border-bottom: 1px solid $color-table-bottom-border
+  thead
+    .sorting:after
+      opacity: 0.4 !important
+      content: "\e150"
+    .sorting_asc:after,
+    .sorting_desc:after,
+    .sorting_asc_disabled:after,
+    .sorting_desc_disabled:after
+      opacity: 1 !important
+      color: $color-primary
+    .sorting_asc:after
+      content: "\e155"
+    /* sort-by-attributes */
+    .sorting_desc:after
+      content: "\e156"
+    /* sort-by-attributes-alt */
+    background: $color-table-header
+    color: $color-white
+  th
+    font-weight: 300 !important
+    font-size: 90%
+  
+
+.paging_full_numbers
+  a.paginate_active
+    background-color: rgba(38, 185, 154, 0.59) !important
+    border-color: rgba(38, 185, 154, 0.59) !important
+    font-size: 70% !important
+
+
+button.DTTT_button,
+div.DTTT_button,
+a.DTTT_button
+  border: 1px solid #E7E7E7 !important
+  background: #E7E7E7 !important
+  box-shadow: none !important
+
+
+table.jambo_table
+  //border-bottom: 1px solid rgba($color-light-gray, 0.78)
+  
+
+  tbody
+    tr:hover td
+      background: rgba($color-gray, 0.65)
+      border-top: 1px solid rgba($color-gray, 0.3)
+      border-bottom: 1px solid rgba($color-gray, 0.11)
+      color: $color-dark-gray
+    tr.selected
+      background: rgba(0, 134, 234, 0.16)
+    tr.selected td
+      border-top: 1px solid rgba(0, 134, 234, 0.40)
+      border-bottom: 1px solid rgba(0, 134, 234, 0.40)
+
+
+.dataTables
+  &_paginate
+    float: righ
+    text-align: right
+    a
+      background: $color-font-base
+  &_info
+    font-size: 70% !important
+    padding-left: 0.8rem
+    color: lighten($color-font-base, 10) !important
+
+
+.dataTables_wrapper
+  position: relative
+  clear: both
+  zoom: 1
+
+
+.dataTables
+  &_processing
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 250px
+    height: 30px
+    margin-left: -125px
+    margin-top: -15px
+    padding: 14px 0 2px 0
+    border: 1px solid $color-light-gray
+    text-align: center
+    color: #999
+    font-size: 14px
+    background-color: white
+  &_length
+    width: 40%
+    float: left
+  &_filter
+    width: 50%
+    float: right
+    text-align: right
+  &_info
+    width: 60%
+    float: left
+  &_paginate
+    float: right
+    text-align: right
+  &_scroll
+    clear: both
+  &_scrollBody
+    *margin-top: -1px
+    -webkit-overflow-scrolling: touch
+  &_paginate
+    font-size: 80% !important
+
+
+table.dataTable
+  th.focus, td.focus
+    outline: 2px solid #1ABB9C !important
+    outline-offset: -1px
+
+
+table.display
+  margin: 0 auto
+  clear: both
+  width: 100%
+  thead th
+    padding: 8px 18px 8px 10px
+    border-bottom: 1px solid $color-black
+    font-weight: bold
+    cursor: pointer
+    &:active, &:focus
+      outline: none !important
+  tfoot th
+    padding: 3px 18px 3px 10px
+    border-top: 1px solid $color-black
+    font-weight: bold
+  tr
+    .heading2 td
+      border-bottom: 1px solid $color-gray
+    .even.row_selected td
+      background-color: #B0BED9
+    .odd.row_selected td
+      background-color: #9FAFD1
+  td
+    padding: 3px 10px
+    .center
+      text-align: center
+    &:active, &:focus
+      outline: none !important
+  
+
+.top, .bottom, .top .dataTables_info
+  float: none
+
+.clear
+  clear: both
+
+
+.dataTables_empty
+  text-align: center
+
+.tree
+  .parentLev
+    background-color: lighten($color-gray, 20) !important
+  .fa-angle-right,
+  .fa-angle-down
+    color: $color-dim-gray
+    margin-right: 0.5rem
+tfoot
+  input
+    margin: 0.5em 0
+    width: 100%
+    color: #444
+    .search_init
+      color: #999
+
+td.group
+  background-color: #d1cfd0
+  border-bottom: 2px solid #A19B9E
+  border-top: 2px solid #A19B9E
+
+td.details
+  background-color: #d1cfd0
+  border: 2px solid #A19B9E
+
+.example_alt_pagination,
+div.dataTables_info
+  width: 40%
+
+.paging_full_numbers
+  width: 400px
+  height: 22px
+  line-height: 22px
+  a:active
+    outline: none
+  a:hover
+    text-decoration: none
+  a
+    .paginate_button, .paginate_active
+      border: 1px solid #aaa
+      -webkit-border-radius: 5px
+      -moz-border-radius: 5px
+      padding: 2px 5px
+      margin: 0 3px
+      cursor: pointer
+    .paginate_button
+      background-color: #ddd
+    .paginate_button:hover
+      background-color: #ccc
+      text-decoration: none !important
+    .paginate_active
+      background-color: #99B3FF
+  
+
+.pagination.pagination-split
+  li
+    display: inline-block
+    margin-right: 3px
+    a 
+      border-radius: 4px
+      color: #768399
+      -moz-border-radius: 4px
+      -webkit-border-radius: 4px

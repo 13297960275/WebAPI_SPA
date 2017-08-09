@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WiAdvance ECS</title>
+	<!-- inquire input file -->
+	<!-- inquire input custom file -->
+	<script src="../assets/js/importRequired_head.js"></script>
+	<script src="../assets/js/importRequired.js"></script>
+	<script src="../assets/vendors/angular/angular.min.js"></script>
+	<script src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="routeConfig.js"></script>
+	<script src="indexcontroller.js"></script>
+	<script src="logincontroller.js"></script>
+	<script src="maincontroller.js"></script>
+	<script src="headercontroller.js"></script>
+	<script src="menucontroller.js"></script>
+	<script src="../customerMgt/subscriptioncontroller.js"></script>
+	<script src="../customerMgt/custcontroller.js"></script>
+</head>
+
+<body class="nav-md" ng-app="ecs" ng-controller="indexcontroller">
+	<section ui-view></section>
+</body>
+</html>

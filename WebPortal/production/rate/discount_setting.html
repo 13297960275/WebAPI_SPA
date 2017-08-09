@@ -1,0 +1,195 @@
+﻿<!-- page content -->
+
+<div class="row col-xs-12 col-lg-10 col-centered">
+	<div class="page-title col-xs-12">
+		<div class="title_left">
+			<h3>Discount Management</h3>
+			<h5>費率 ／ 折扣 <small>Function Description...</small></h5>
+		</div>
+	</div>
+	<!--search-->
+	<div class="search-block col-xs-12">
+		<form class="form-inline">
+			<div class="form-group col-sm-4">
+				<label>Partner</label>
+				<select class="form-control">
+					<option>WiAdvance</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-4">
+				<label>Customer</label>
+				<select class="form-control">
+					<option>金財通商務科技股份有限公司</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-success btn-xs-block"><i class="fa fa-search"></i> Search</button>
+			</div>
+		</form>
+	</div>
+	<!--/search-->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="well well-summary">
+				<div class="row">
+					<div class="col-md-6 text-left">
+						<h4>Set Discount for</h4>
+						<h3>金財通商務科技股份有限公司</h3>
+					</div>
+					<div class="col-md-6 text-left">
+						<form class="form-inline">
+							<div class="form-group">
+								<label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+								<div class="input-group input-group-lg">
+									<input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="" value="20">
+									<div class="input-group-addon">% OFF</div>
+									<span class="input-group-btn">
+										<button class="btn btn-primary"><i class="fa fa-check"></i> Apply</button>
+									</span>
+								</div>
+							</div>
+							<br><br>
+							<p>Effective Date: 20170715<br>last updated by: cherry tsai 20170707 20:00</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--data grid-->
+	<div class="row space-top-2">
+		<div class="col-sm-12">
+			<h2>List of Subscriptions</h2>
+			<table id="datatable-responsive" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>Subscription</th>
+						<th class="text-center">Subscription Discount</th>
+						<th class="text-center">Total Discount</th>
+						<th class="text-center">Effective Date</th>
+						<th>Last Updated by</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Microsoft Azure</td>
+						<td class="text-right">0%</td>
+						<td class="text-right">20%</td>
+						<td></td>
+						<td>Cherry Tsai 2017/0701 20:00</td>
+						<td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-trash"></i> Delete</a></td>
+					</tr>
+					<tr>
+						<td>CHANEL-電子發票</td>
+						<td>
+							<form class="form-inline">
+								<div class="form-group pull-right">
+									<label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+									<div class="input-group pull-right">
+										<input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="" value="5">
+										<div class="input-group-addon">%</div>
+									</div>
+								</div>
+							</form>
+						</td>
+						<td class="text-right">25%</td>
+						<td></td>
+						<td>Cherry Tsai 2017/0701 20:00</td>
+						<td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-save"></i> Save</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-chevron-left"></i> Cancel</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row space-top-2">
+		<div class="col-sm-12">
+			<h2>List of Resource</h2>
+			<!--search-->
+			<div class="search-block col-xs-12">
+				<form class="form-inline">
+					<div class="form-group col-sm-3">
+						<label>Subscription</label>
+						<select class="form-control">
+							<option>Subscription</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-8">
+						<label>Specific Resource</label>
+						<select class="form-control">
+							<option>Resource Category</option>
+						</select>
+						<select class="form-control">
+							<option>Resource sub-Category</option>
+						</select>
+						<select class="form-control">
+							<option>Resource Name</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-success btn-xs-block"><i class="fa fa-search"></i> Search</button>
+					</div>
+				</form>
+			</div>
+			<!--/search-->
+			<table id="datatable-responsive2" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Category</th>
+						<th>sub-Category</th>
+						<th>Resource Name</th>
+						<th>Region</th>
+						<th>Rate</th>
+						<th class="text-center">Discount</th>
+						<th class="text-center">Total Discount</th>
+						<th class="text-center">Last Update by</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2017/0701</td>
+						<td>aa</td>
+						<td>aa01</td>
+						<td>aa01-0984304852</td>
+						<td>Taiwan</td>
+						<td></td>
+						<td class="text-right">0%</td>
+						<td class="text-right">20%</td>
+						<td>Cherry Tsai 2017/0701 20:00</td>
+						<td><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-trash"></i> Delete</a></td>
+					</tr>
+					<tr>
+						<td>2017/0701</td>
+						<td>bb</td>
+						<td>bb09</td>
+						<td>bb09-32464567876</td>
+						<td>Taiwan</td>
+						<td class="text-right"></td>
+						<td class="text-right">
+							<form class="form-inline">
+								<div class="form-group">
+									<label class="sr-only" for="exampleInputAmount">Discount Percentage</label>
+									<div class="input-group pull-right">
+										<input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="" value="5">
+										<div class="input-group-addon">%</div>
+									</div>
+								</div>
+							</form>
+						</td>
+						<td class="text-right">25%</td>
+						<td>Cherry Tsai 2017/0701 20:00</td>
+						<td><a href="#" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#apply-msg"><i class="fa fa-save"></i> Save</a> <a href="#" class="btn btn-xs btn-default"><i class="fa fa-chevron-left"></i> Cancel</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--/data grid-->
+
+</div>
+<!--/page content -->

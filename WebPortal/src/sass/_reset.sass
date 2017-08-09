@@ -1,0 +1,244 @@
+@charset "utf-8"
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700)
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700)
+
+html
+	min-height: 100% !important
+body
+	font-size: 1.5rem
+	line-height: 1.5
+	font-family: "Roboto", "微軟正黑體", sans-serif
+	color: $color-font-base
+	overflow-x: hidden
+	//position: relative
+	margin-bottom: 60px !important
+	height: 100vh !important
+	box-sizing:content-box
+	&:after
+		content: ""
+		display: block
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,.72)
+		opacity: 0
+		visibility: hidden
+		transition: .4s
+		
+	&.openMobileNav
+		overflow: hidden
+		cursor: pointer
+		&:after
+			opacity: 1
+			visibility: visible
+	&.showEmbedBox
+		overflow: hidden
+	.container-fuild
+		min-height: 100% !important
+	+xs
+		padding-top: 60px
+
+#wrap
+	overflow-x: hidden
+
+a
+	color: $color-gray
+	cursor: pointer
+	&:hover
+		text-decoration: none
+		color: $color-dark-gray
+	&:focus, &:visited, &:active
+		outline: 0
+		text-decoration: none
+
+button:focus
+	outline: 0
+
+ul, ol
+	padding: 0
+	margin: 0
+	list-style: none
+.edit ul
+	list-style: initial
+.edit ol
+	list-style: decimal
+
+.dropdown-menu
+	min-width: 120px
+	border: 0
+	border-radius: 0
+	> li > a
+		padding: 8px 24px
+
+.table-vertical-middle
+	th, td
+		vertical-align: middle !important
+
+.column-count-2
+	+sm
+		column-count: 2
+		column-gap: 48px
+		-moz-column-count: 2
+		-moz-column-gap: 48px
+		-webkit-column-count: 2
+		-webkit-column-gap: 48px
+
+.text-center
+	.img-responsive
+		margin-left: auto
+		margin-right: auto
+
+.text-center-xs
+	+xs
+		text-align: center
+
+.col-sm-6.text-center
+	p
+		max-width: 360px
+		margin-left: auto
+		margin-right: auto
+
+.material-icons
+	vertical-align: middle
+	&.mi-xs
+		font-size: 14px
+
+
+.form-group
+	margin-bottom: 1.5rem
+	&.form-group-cols
+		margin-bottom: .5rem
+		.row > div
+			margin-bottom: 1rem
+
+.form-control
+	height: 36px
+	&.fc-xs
+		width: 50px
+	&.fc-sm
+		width: 68px
+	&.fc-md
+		width: 120px
+
+.table
+	background-color: #fff
+	thead tr th
+		border-bottom: 2px solid $color-light-gray !important
+	&.text-center
+		th, td
+			text-align: center
+		.form-control, .switch
+			margin-left: auto
+			margin-right: auto
+	&.vertical-middle
+		th, td, label
+			vertical-align: middle
+	th, td
+		&.vertical-top
+			vertical-align: top
+		&.text-left
+			text-align: left
+	.btn-remove
+		cursor: pointer
+		color: $color-light-gray
+		transition: .2s
+		&:hover
+			color: $color-gray
+	.btn-price-toggle
+		cursor: pointer
+		color: $color-light-gray
+		transition: .2s
+		&:hover
+			color: $color-dark-gray
+		&.open
+			transform: rotate(180deg)
+	.th-md
+		min-width: 150px
+	.table
+		margin-bottom: 0
+	&.layout-fixed
+		+sm
+			table-layout: fixed
+
+.edit
+	img, iframe
+		max-width: 100%
+		height: auto !important
+
+i
+	font-family: 'FontAwesome', 'font-ecs' !important
+p
+	margin-bottom: 0 !important
+
+
+
+// bootstrap reset
+label
+	font-weight: 500 !important
+	vertical-align: middle !important
+	line-height: 1 !important
+
+.label
+	border-radius: 0
+	&.label-md
+		font-size: 15px
+input, select
+	vertical-align: middle !important
+
+.alert
+	position: fixed
+	top: 60px
+	width: 95%
+	left: 5%
+
+.col-phone-6
+	+phone
+		width: 50%
+
+.list-inline
+	&.list-inline-lg
+		li
+			padding: 0 2rem
+			margin-bottom: 2rem
+.swiper-slide
+	+xs
+		width: 50%
+.swiper-button-next,
+.swiper-button-prev
+	background-image: none !important
+.tab-pane
+	padding: 3rem 2rem
+.alert
+	width: 100% !important
+	position: relative !important
+	top: 0
+	left: 0
+.form-inline	
+	input, select
+		margin-bottom: 1rem
+	.input-align-middle
+		vertical-align: middle
+		+sm
+			margin-top: -0.8rem
+		+xs
+			margin-top: auto
+.btn
+	//font-size: 14px !important
+	font-weight: 300
+	vertical-align: middle !important
+	i
+		font-size: 16px
+		line-height: 1.4
+		//vertical-align: middle
+	&-sm, &-xs
+		font-size: 86% !important
+		i
+			font-size: 92%
+	&-default
+		color: $color-font-base
+	&-xs-block
+		+xs
+			width: 100%
+			display: block

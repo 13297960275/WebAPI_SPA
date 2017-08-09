@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiAdvance ECS</title>
+    <!-- inquire input file -->
+    <script src="../assets/js/importRequired_head.js"></script>
+</head>
+
+<body class="nav-md" ng-app="">
+    <div class="container-fuild body">
+        <div class="main_container">
+            <!-- header -->
+            <div class="top-header small-padding">
+                <div class="row">
+                    <nav class="col-xs-12 col-lg-10 col-centered">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="nav toggle pull-right icon-menu-close" >CLOSE <i class="fa fa-close"></i></a>
+                            </div>
+                            <div class="nav toggle icon-menu-hamburger visible-xs pull-left"><i class="fa fa-bars"></i> MENU</a>
+                            </div>
+                            <img src="../assets/images/customer-logo.svg" class="logo-img">
+                            <p class="portal-name  visible-xs">Customer Portal</p>
+                        </div>
+                        
+                        <ul class="nav navbar-nav col-xs-12 col-sm-6  hidden-xs">
+                            <li class="pull-right">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <span class="position">| WiAdvance System Admin</span>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                    <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                    <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </div>
+            <!--top menu-->
+            <div class="top-menu">
+                <div class="top-header small-padding visible-xs">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <br><span class="position">WiAdvance System Admin</span>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu">
+                                <li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
+                                <li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
+                                <li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row CM small-padding">
+                    <div class="col-xs-12 col-lg-10 col-centered">
+                        <p class="col-sm-3 col-md-2 portal-name  hidden-xs">Customer Portal</p>
+                        <ul class="col-sm-6 col-md-8">
+                            <!--<li>custom item 1</li>
+                            <li>custom item 2</li>-->
+                        </ul>
+                        <ul class="col-sm-3 col-md-2 hidden-xs">
+                            <li id="ecsMenu" class="pull-right"> MENU <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row ECS block-padding" id="ECSitem">
+                    <div class="col-xs-12 col-lg-10 col-centered swiper swiper-container">
+                        <div class="swiper-wrapper swiper-wrapper-xs">
+                            <ul class="col-xs-6 col-sm-2 swiper-slide">
+                                <i class="icon-user"></i>
+                                <p class="title">客戶管理</p>
+                                <li><a href="../customerMgt/custMgt_list.html">客戶資料管理</a></li>
+                                <li><a href="../customerMgt/subscriptions_list.html">客戶訂閱管理</a></li>
+                                <li><a href="../customerMgt/keystore_list.html">Keystore</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-chart"></i>
+                                <p class="title">用量查詢管理</p>
+                                <li>每月使用量報表</li>
+                                <li>每日使用量報表</li>
+                                <li><a href="../report/report_usageTrend.html">目前用量查詢報表</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-warning"></i>
+                                <p class="title">告警服務</p>
+                                <li>使用量告警通知</li>
+                                <li><a href="../usageAlert/usageAlert_budget_setting.html">用量警示設定</a></li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-discount"></i>
+                                <p class="title">費率／折扣</p>
+                                <li><a href="../rate/rateCard_list.html">費率查詢</a></li>
+                                <li><a href="../rate/discount_setting.html">客戶折扣設定</a></li>
+                            </ul>
+                            <div class="clearfix visible-xs"></div>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-invoice"></i>
+                                <p class="title">帳單管理</p>
+                                <li>客戶帳單查詢</li>
+                                <li>帳務設定</li>
+                            </ul>
+                            <ul class="col-xs-6 col-sm-2 swiper-slide ">
+                                <i class="icon-lock"></i>
+                                <p class="title">權限管理</p>
+                                <li><a href="../permissionMgt/permission_list_customer.html">使用者權限管理</a></li>
+                            </ul>                            
+                        </div>
+                        <div class="swiper-button-prev hidden-xs"><i class="icon-slide-arrow-left"></i></div>
+                        <div class="swiper-button-next hidden-xs"><i class="icon-slide-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!--/top menu-->
+            <!--/header -->
+
+            <!-- page content -->
+            <div class="page-container block-padding">
+                <div class="row">
+                <div class="col-xs-12 col-lg-10 col-centered">
+                    <div class="page-title col-xs-12">
+                        <div class="title_left">
+                            <h3>目前用量查詢報表</h3>
+                            <h5>用量查詢管理 <small>Function Description...</small></h5>
+                        </div>
+                    </div>
+                    <!--search-->
+                    <div class="search-block col-xs-12">
+                        <form class="form-inline">
+                            <div class="form-group col-sm-4">
+                                <label>Partner</label>
+                                <select class="form-control">
+                                    <option>WiAdvance</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6  col-md-4">
+                                <label>Customer</label>
+                                <select class="form-control">
+                                    <option>金財通商務科技股份有限公司</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-success btn-xs-block"><i class="fa fa-search"></i> Search</button> 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/search-->
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2>金財通商務科技股份有限公司</h2>
+                        </div> 
+                        <div class="col-xs-12">
+                            <h2>Current Usage <small class="text-right pull-right col-xs-12">Estimated Usage Report for 7/12/17 9:03 AM</small></h2> 
+                            <div class="well well-summary col-xs-12">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="col-sm-12">
+                                        <div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> 使用量即超過總預算</div>
+                                    </div>
+                                    <div class="col-sm-12 date-period">
+                                        <h3 class="col-sm-12">Billing period</h3>
+                                        <p>There are <large>19</large> days left.</p>
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-default">
+                                              <div class="panel-heading">
+                                                <h3 class="panel-title">From</h3>
+                                              </div>
+                                              <div class="panel-body">
+                                                <p class="text-yaar">2107</p>
+                                                <p class="text-date">07/01</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-default">
+                                              <div class="panel-heading">
+                                                <h3 class="panel-title">To</h3>
+                                              </div>
+                                              <div class="panel-body">
+                                                <p class="text-yaar">2107</p>
+                                                <p class="text-date">07/12</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-8">
+                                    <div class="col-sm-12">
+                                        <div class="progress">
+                                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                            60%
+                                          </div>
+                                        </div>
+                                        <p>60% of their NT$<large>5,000</large> monthly budget.</p>
+                                    </div>
+                                    <div class="col-sm-12  text-center">
+                                        <div class="col-sm-3">
+                                            <div class="circle"><label>Your Budget <small>(NT$)</small></label><p class="num">0.00</p></div>
+                                        </div>
+                                        <div class="col-sm-1 formula-box hidden-xs">
+                                            <span class="align-middle"><i class="fa fa-minus fa-lg"></i></span>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="circle"><label>Current Estimate <small>(NT$)</small></label><p class="num">0.00</p></div>
+                                        </div>
+                                        <div class="col-sm-1 formula-box hidden-xs">
+                                            <i class="fa fa-pause fa-lg fa-rotate-90"></i>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <small class="visible-xs"><large>Result</large> = Your Budget - Current Estimate</small>
+                                            <div class="circle"><label>Result <small>(NT$)</small></label><p class="num">0.00</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>
+
+                    <!--data grid-->
+                    <div class="row space-top-2">
+                        <div class="col-xs-12">
+                            <h2>Total Subscriptions</h2>
+                            <table id="datatable-responsive" class="table table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Subscription</th>
+                                        <th class="text-right">Current Extimate (NT$)</th>
+                                        <th class="text-right">% of Total</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>金財通-立和倉儲租賃平台</td>
+                                        <td class="text-right">789.68</td>
+                                        <td class="text-right">66%</td>
+                                        <td class="text-center"><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3M-報修派工系統</td>
+                                        <td class="text-right">405.48</td>
+                                        <td class="text-right">34%</td>
+                                        <td class="text-center"><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CHANEL-電子發票</td>
+                                        <td class="text-right">0.00</td>
+                                        <td class="text-right">0%</td>
+                                        <td class="text-center"><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Microsoft Azure</td>
+                                        <td class="text-right">0.00</td>
+                                        <td class="text-right">0%</td>
+                                        <td class="text-center"><a href="#" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/data grid-->
+
+                    <!--charts-->
+                    <div class="row space-top-2">
+                        <div class="col-sm-12">
+                            <h2>Total Usage</h2>
+                            <div class="col-sm-12 well well-charts">
+                                <div id="echart_line_totalUsage" class="chart" style="height:400%;"></div>
+                            </div>
+
+                            <h2>Total Costs</h2>
+                            <div class="col-sm-12 well well-charts space-top-2">
+                                <div class="col-sm-6">
+                                    <div id="echart_donut_totalCost" class="chart" style="height:400%;"></div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div id="echart_pie_perService" class="chart" style="height:400%;"></div>
+                                </div>
+
+                                <div class="col-sm-12 space-top-2">
+                                    <div id="echart_barChart_perServiceResource" class="chart" style="height:400%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/charts-->
+                </div>
+                </div>
+            </div>
+            <!--/page content -->
+        </div>
+    </div>
+
+    <!-- footer-->
+    <footer>
+        <div class="container-fuild">
+            <div class="row col-xs-12 col-lg-10 col-centered">
+                <div class="col-xs-6 col-sm-3">
+                    <P>&copy; Wiadvance 2016</P>
+                </div>
+                <div class="col-xs-6 col-sm-9">
+                    <div class="dropup pull-right">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#">中文 - 繁體</a></li>
+                            <li><a href="#">中文 - 简体</a></li>
+                            <li><a href="#">English - US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/footer-->
+
+
+    <!-- inquire input custom file -->
+    <script src="../assets/js/importRequired.js"></script>
+
+    <!-- Datatables -->
+    <script>
+        $('#datatable-responsive').DataTable({
+            lengthChange: false,
+            searching: false,
+            order: false,
+            bSort: false
+        });
+    </script>
+    <!-- /Datatables -->
+
+    <script type="text/javascript">
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+          });
+    </script>
+
+
+    <script>
+     /* ECHRTS */   
+        function init_echarts() {
+        
+            if( typeof (echarts) === 'undefined'){ return; }
+            console.log('init_echarts');
+        
+    
+              var theme = {
+              color: [
+                  '#6189AA', '#34495E', '#BDC3C7', '#26B99A',
+                  '#7F74B1', '#8abb6f', '#759c6a', '#bfd3b7'
+              ],
+
+              title: {
+                  itemGap: 8,
+                  textStyle: {
+                      fontWeight: 'normal',
+                      color: '#677583',
+                  }
+              },
+
+              dataRange: {
+                  color: ['#1f610a', '#97b58d']
+              },
+
+              toolbox: {
+                  color: ['#408829', '#408829', '#408829', '#408829']
+              },
+
+              tooltip: {
+                  backgroundColor: 'rgba(0,0,0,0.5)',
+                  axisPointer: {
+                      type: 'line',
+                      lineStyle: {
+                          color: '#408829',
+                          type: 'dashed'
+                      },
+                      crossStyle: {
+                          color: '#408829'
+                      },
+                      shadowStyle: {
+                          color: 'rgba(200,200,200,0.3)'
+                      },
+                  }
+              },
+
+              dataZoom: {
+                  dataBackgroundColor: '#eee',
+                  fillerColor: 'rgba(64,136,41,0.2)',
+                  handleColor: '#408829'
+              },
+              grid: {
+                  borderWidth: 0
+              },
+
+              categoryAxis: {
+                  axisLine: {
+                      lineStyle: {
+                          color: '#6189AA'
+                      }
+                  },
+                  splitLine: {
+                      lineStyle: {
+                          color: ['#eee']
+                      }
+                  }
+              },
+
+              valueAxis: {
+                  axisLine: {
+                      lineStyle: {
+                          color: '#6189AA'
+                      }
+                  },
+                  splitArea: {
+                      show: true,
+                      areaStyle: {
+                          color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+                      }
+                  },
+                  splitLine: {
+                      lineStyle: {
+                          color: ['#eee']
+                      }
+                  }
+              },
+              timeline: {
+                  lineStyle: {
+                      color: '#408829'
+                  },
+                  controlStyle: {
+                      normal: {color: '#408829'},
+                      emphasis: {color: '#408829'}
+                  }
+              },
+
+              k: {
+                  itemStyle: {
+                      normal: {
+                          color: '#68a54a',
+                          color0: '#a9cba2',
+                          lineStyle: {
+                              width: 1,
+                              color: '#408829',
+                              color0: '#86b379'
+                          }
+                      }
+                  }
+              },
+              map: {
+                  itemStyle: {
+                      normal: {
+                          areaStyle: {
+                              color: '#ddd'
+                          },
+                          label: {
+                              textStyle: {
+                                  color: '#c12e34'
+                              }
+                          }
+                      },
+                      emphasis: {
+                          areaStyle: {
+                              color: '#99d2dd'
+                          },
+                          label: {
+                              textStyle: {
+                                  color: '#c12e34'
+                              }
+                          }
+                      }
+                  }
+              },
+              force: {
+                  itemStyle: {
+                      normal: {
+                          linkStyle: {
+                              strokeColor: '#408829'
+                          }
+                      }
+                  }
+              },
+              chord: {
+                  padding: 4,
+                  itemStyle: {
+                      normal: {
+                          lineStyle: {
+                              width: 1,
+                              color: 'rgba(128, 128, 128, 0.5)'
+                          },
+                          chordStyle: {
+                              lineStyle: {
+                                  width: 1,
+                                  color: 'rgba(128, 128, 128, 0.5)'
+                              }
+                          }
+                      },
+                      emphasis: {
+                          lineStyle: {
+                              width: 1,
+                              color: 'rgba(128, 128, 128, 0.5)'
+                          },
+                          chordStyle: {
+                              lineStyle: {
+                                  width: 1,
+                                  color: 'rgba(128, 128, 128, 0.5)'
+                              }
+                          }
+                      }
+                  }
+              },
+              gauge: {
+                  startAngle: 225,
+                  endAngle: -45,
+                  axisLine: {
+                      show: true,
+                      lineStyle: {
+                          color: [[0.2, '#86b379'], [0.8, '#68a54a'], [1, '#408829']],
+                          width: 8
+                      }
+                  },
+                  axisTick: {
+                      splitNumber: 10,
+                      length: 12,
+                      lineStyle: {
+                          color: 'auto'
+                      }
+                  },
+                  axisLabel: {
+                      textStyle: {
+                          color: 'auto'
+                      }
+                  },
+                  splitLine: {
+                      length: 18,
+                      lineStyle: {
+                          color: 'auto'
+                      }
+                  },
+                  pointer: {
+                      length: '90%',
+                      color: 'auto'
+                  },
+                  title: {
+                      textStyle: {
+                          color: '#333'
+                      }
+                  },
+                  detail: {
+                      textStyle: {
+                          color: 'auto'
+                      }
+                  }
+              },
+              textStyle: {
+                  fontFamily: 'Arial, Verdana, sans-serif'
+              }
+          };
+     
+     //echart Line
+        
+      if ($('#echart_line_totalUsage').length ){ 
+        
+        var echartLine = echarts.init(document.getElementById('echart_line_totalUsage'), theme);
+
+        echartLine.setOption({
+            title: {
+              text: 'Over time',
+              subtext: ''
+            },
+            tooltip: {
+              trigger: 'axis'
+            },
+            legend: {
+              x: 'center',
+              y: 'bottom',
+              data: ['10.000s', 'Days', 'GB', 'Hours', 'instances', 'Nodes', 'Units']
+            },
+            toolbox: {
+              show: true,
+              feature: {
+              magicType: {
+                show: true,
+                title: {
+                line: 'Line',
+                bar: 'Bar',
+                stack: 'Stack',
+                tiled: 'Tiled'
+                },
+                type: ['line', 'bar', 'stack', 'tiled']
+              },
+              restore: {
+                show: true,
+                title: "Restore"
+              },
+              saveAsImage: {
+                show: true,
+                title: "Save Image"
+              }
+              }
+            },
+            calculable: true,
+            xAxis: [{
+              type: 'category',
+              boundaryGap: false,
+              data: ['7/1', '7/2', '7/3', '7/4', '7/5', '7/6', '7/7', '7/8', '7/9', '7/10', '7/11', '7/12']
+            }],
+            yAxis: [{
+              type: 'value'
+            }],
+            series: [{
+              name: '10.000s',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [10, 12, 21, 54, 260, 830, 710, 830, 710, 800, 890, 900]
+            }, {
+              name: 'Days',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [30, 182, 434, 791, 390, 30, 10, 30, 182, 434, 791, 390]
+            }, {
+              name: 'GB',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [1320, 1132, 601, 234, 120, 90, 20, 601, 234, 120, 90, 20]
+            }, {
+              name: 'Hours',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [90, 20, 601, 234, 120, 90, 300, 680, 601, 234, 120, 20]
+            }, {
+              name: 'instances',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [90, 20, 601, 234, 120, 90, 20, 60, 400, 601, 234, 120]
+            }, {
+              name: 'Nodes',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [390, 30, 10, 30, 182, 434, 791, 30, 182, 434, 791, 390]
+            }, {
+              name: 'Units',
+              type: 'line',
+              smooth: true,
+              itemStyle: {
+              normal: {
+                areaStyle: {
+                type: 'default'
+                }
+              }
+              },
+              data: [30, 10, 30, 182, 434, 791, 30, 182, 434, 800, 390, 390]
+            }]
+            });
+
+      }
+
+    //echart Donut
+    if ($('#echart_donut_totalCost').length ){  
+      var echartDonut = echarts.init(document.getElementById('echart_donut_totalCost'), theme);
+      
+      echartDonut.setOption({
+        title: {
+          text: 'Total Costs of Resource',
+          subtext: ''
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        calculable: true,
+        legend: {
+          x: 'center',
+          y: 'bottom',
+          data: ['REKENUREN', 'STANDARD-IO-BLOCK-BL08', 'BEVEILIGDE INSTA', 'PREMIUM-A', 'PREMIUM-OPSL-BAGI', 'GATEWAY- UREN-B', 'PREMIUM-OPSLAG-PAGI']
+        },
+        toolbox: {
+          show: false,
+          feature: {
+            magicType: {
+              show: true,
+              type: ['pie', 'funnel'],
+              option: {
+                funnel: {
+                  x: '25%',
+                  width: '50%',
+                  funnelAlign: 'center',
+                  max: 1548
+                }
+              }
+            },
+            restore: {
+              show: true,
+              title: "Restore"
+            },
+            saveAsImage: {
+              show: true,
+              title: "Save Image"
+            }
+          }
+        },
+        series: [{
+          name: 'Total Cost of Resources',
+          type: 'pie',
+          radius: ['35%', '55%'],
+          itemStyle: {
+            normal: {
+              label: {
+                show: true
+              },
+              labelLine: {
+                show: true
+              }
+            },
+            emphasis: {
+              label: {
+                show: true,
+                position: 'center',
+                textStyle: {
+                  fontSize: '14',
+                  fontWeight: 'normal'
+                }
+              }
+            }
+          },
+          data: [{
+            value: 100,
+            name: 'REKENUREN'
+          }, {
+            value: 30,
+            name: 'STANDARD-IO-BLOCK-BL08'
+          }, {
+            value: 25,
+            name: 'BEVEILIGDE INSTA'
+          }, {
+            value: 25,
+            name: 'PREMIUM - A'
+          }, {
+            value: 20,
+            name: 'PREMIUM-OPSL-BAGI'
+          }
+          , {
+            value: 10,
+            name: 'GATEWAY- UREN-B'
+          }
+          , {
+            value: 8,
+            name: 'PREMIUM-OPSLAG-PAGI'
+          }]
+        }]
+      });
+
+    }
+
+    //echart Pie
+    if ($('#echart_pie_perService').length ){  
+      
+      var echartPie = echarts.init(document.getElementById('echart_pie_perService'), theme);
+
+      echartPie.setOption({
+        title: {
+          text: 'Total Costs per Service',
+          subtext: ''
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+          x: 'center',
+          y: 'bottom',
+          data: ['AZURE APP SERVICE', 'DATA SERVICE', 'NETWEAKEN', 'RECOVERY SERVICE', 'STORAGE', 'VIRTUAL MACHINES']
+        },
+        toolbox: {
+          show: false,
+          feature: {
+            magicType: {
+              show: true,
+              type: ['pie', 'funnel'],
+              option: {
+                funnel: {
+                  x: '25%',
+                  width: '50%',
+                  funnelAlign: 'left',
+                  max: 1548
+                }
+              }
+            },
+            restore: {
+              show: true,
+              title: "Restore"
+            },
+            saveAsImage: {
+              show: true,
+              title: "Save Image"
+            }
+          }
+        },
+        calculable: true,
+        series: [{
+          name: '',
+          type: 'pie',
+          radius: '55%',
+          center: ['50%', '48%'],
+          data: [{
+            value: 335,
+            name: 'AZURE APP SERVICE'
+          }, {
+            value: 310,
+            name: 'DATA SERVICE'
+          }, {
+            value: 234,
+            name: 'NETWEAKEN'
+          }, {
+            value: 135,
+            name: 'RECOVERY SERVICE'
+          }, {
+            value: 1548,
+            name: 'STORAGE'
+          }, {
+            value: 1548,
+            name: 'VIRTUAL MACHINES'
+          }]
+        }]
+      });
+
+      var dataStyle = {
+        normal: {
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          }
+        }
+      };
+
+      var placeHolderStyle = {
+        normal: {
+          color: 'rgba(0,0,0,0)',
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          }
+        },
+        emphasis: {
+          color: 'rgba(0,0,0,0)'
+        }
+      };
+
+    } 
+
+    //echart Bar
+              
+    if ($('#echart_barChart_perServiceResource').length ){
+      
+          var echartBar = echarts.init(document.getElementById('echart_barChart_perServiceResource'), theme);
+
+          echartBar.setOption({
+            title: {
+              text: 'Total Costs per Service and Resource',
+              subtext: ''
+            },
+            tooltip: {
+              trigger: 'axis'
+            },
+            legend: {
+              x: 'center',
+              y: 'bottom',
+              data: ['VITURAL MACHINES', 'STORAGE', 'RECOVERY SERVICES', 'AZURE APP SERVICE', 'NETWERKEN', 'GEGEVENSBEHEER', 'DATA SERVICES']
+            },
+            toolbox: {
+              show: false
+            },
+            calculable: false,
+            xAxis: [{
+              type: 'category',
+              data: ['VITURAL MACHINES', 'STORAGE', 'RECOVERY SERVICES', 'AZURE APP SERVICE', 'NETWERKEN', 'GEGEVENSBEHEER', 'DATA SERVICES']
+            }],
+            yAxis: [{
+              type: 'value'
+            }],
+            
+            series: [{
+              name: '',
+              type: 'bar',
+              data: [1082, 735, 317, 289, 110, 24, 23],
+              markPoint: {
+                data: [{
+                  type: 'max',
+                  name: '???'
+                }, {
+                  type: 'min',
+                  name: '???'
+                }]
+              },
+              markLine: {
+                data: [{
+                  type: 'average',
+                  name: '???'
+                }]
+              }
+            }]
+          });
+
+    }
+
+  }
+                
+    init_echarts();
+
+    </script>
+
+
+</body>
+
+</html>
