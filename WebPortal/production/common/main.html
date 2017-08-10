@@ -5,25 +5,25 @@
 			<nav class="col-xs-12 col-lg-10 col-centered">
 				<div class="col-xs-12 col-sm-6">
 					<div class="nav toggle pull-right icon-menu-close">
-						CLOSE <i class="fa fa-close"></i></a>
+						{{'MENU.CLOSE'|translate}} <i class="fa fa-close"></i></a>
 					</div>
 					<div class="nav toggle icon-menu-hamburger visible-xs pull-left">
-						<i class="fa fa-bars"></i> MENU</a>
+						<i class="fa fa-bars"></i> {{'MENU.MENU'|translate}} </a>
 					</div>
 					<img src="../assets/images/customer-logo.svg" class="logo-img">
-					<p class="portal-name  visible-xs">Customer Portal</p>
+					<p class="portal-name  visible-xs">{{'MENU.PORTAL_NAME'|translate}} </p>
 				</div>
 
 				<ul class="nav navbar-nav col-xs-12 col-sm-6  hidden-xs">
 					<li class="pull-right">
 						<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							<img src="../assets/images/user-img.jpg" alt="">Hi, Amanda <span class="position">| WiAdvance System Admin</span>
+							<img src="../assets/images/user-img.jpg" alt="">{{'MENU.HELLO'|translate}}, Amanda <span class="position">'| WiAdvance System Admin</span>
 							<span class="fa fa-angle-down"></span>
 						</a>
 						<ul class="dropdown-menu dropdown-usermenu pull-right">
-							<li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  Profile</a></li>
-							<li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  重設密碼</a></li>
-							<li><a href="../login.html"><i class="fa fa-sign-out"></i> Log Out</a></li>
+							<li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  {{'MENU.CUSTOMER_PROFILE'|translate}}</a></li>
+							<li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  {{'MENU.RESET_PWD'|translate}}</a></li>
+							<li><a href="../login.html"><i class="fa fa-sign-out"></i> {{'MENU.LOGOUT'|translate}}</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -36,13 +36,13 @@
 	<div class="top-menu" ng-controller="menuCtrl">
 		<div class="row CM small-padding">
 			<div class="col-xs-12 col-lg-10 col-centered">
-				<p class="col-sm-3 col-md-2 portal-name  hidden-xs">Customer Portal</p>
+				<p class="col-sm-3 col-md-2 portal-name  hidden-xs">{{'MENU.PORTAL_NAME'|translate}}</p>
 				<ul class="col-sm-6 col-md-8">
 					<!--<li>custom item 1</li>
 					<li>custom item 2</li>-->
 				</ul>
 				<ul class="col-sm-3 col-md-2 hidden-xs">
-					<li id="ecsMenu" class="pull-right"> MENU <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
+					<li id="ecsMenu" class="pull-right"> {{'MENU.MENU'|translate}} <span class="fa fa-angle-down arrow-down"></span><span class="fa fa-angle-up arrow-up"></span></li>
 				</ul>
 			</div>
 		</div>
@@ -51,43 +51,43 @@
 				<div class="swiper-wrapper swiper-wrapper-xs">
 					<ul class="col-xs-6 swiper-slide col-sm-2">
 						<i class="icon-user"></i>
-						<p class="title">客戶管理</p>
-						<li><a ui-sref=".custMgt">客戶資料管理</a></li>
-						<li><a ui-sref=".subscriptions">客戶訂閱管理</a></li>
-						<li><a ui-sref=".keystore">Keystore</a></li>
+						<p class="title">{{'MENU.CUSTOMER_MGT'|translate}}</p>
+						<li><a ui-sref=".custMgt">{{'MENU.CUSTOMER_INFO_MGT'|translate}}</a></li>
+						<li><a ui-sref=".subscriptions">{{'MENU.CUSTOMER_SUB_MGT'|translate}}</a></li>
+						<li><a ui-sref=".keystore">{{'MENU.KEYSTORE'|translate}}</a></li>
 						<!--<li><a ui-sref=".subscriptionsDetail">详情</a></li>-->
 					</ul>
 					<ul class="col-xs-6 swiper-slide col-sm-2 ">
 						<i class="icon-chart"></i>
-						<p class="title">用量查詢管理</p>
-						<li>每月使用量報表</li>
-						<li>每日使用量報表</li>
-						<li><a ui-sref=".usageTrend">目前用量查詢報表</a></li>
+						<p class="title">{{'MENU.USAGE_MGT'|translate}}</p>
+						<li>{{'MENU.USAGE_MONTHLY'|translate}}</li>
+						<li>{{'MENU.USAGE_DAILY'|translate}}</li>
+						<li><a ui-sref=".usageTrend">{{'MENU.USAGE_CURRENT'|translate}}</a></li>
 					</ul>
 					<div class="clearfix visible-xs"></div>
 					<ul class="col-xs-6 swiper-slide col-sm-2 ">
 						<i class="icon-warning"></i>
-						<p class="title">告警服務</p>
-						<li>使用量告警通知</li>
-						<li><a ui-sref=".usageAlert">用量警示設定</a></li>
+						<p class="title">{{'MENU.ALARM_SERVICE'|translate}}</p>
+						<li>{{'MENU.ALARM_USAGE_NOTIFICATION'|translate}}</li>
+						<li><a ui-sref=".usageAlert">{{'MENU.ALARM_USAGE_SETTING'|translate}}</a></li>
 					</ul>
 					<ul class="col-xs-6 swiper-slide col-sm-2 ">
 						<i class="icon-discount"></i>
-						<p class="title">費率／折扣</p>
-						<li><a ng-click="goToRatecard()">費率查詢</a></li>
-						<li><a ui-sref=".discount">客戶折扣設定</a></li>
+						<p class="title">{{'MENU.RATE_DISSCOUNT'|translate}}</p>
+						<li><a ng-click="goToRatecard()">{{'MENU.RATE_QUERY'|translate}}</a></li>
+						<li><a ui-sref=".discount">{{'MENU.DISSCOUNT_SETTING'|translate}}</a></li>
 					</ul>
 					<div class="clearfix visible-xs"></div>
 					<ul class="col-xs-6 swiper-slide col-sm-2 ">
 						<i class="icon-invoice"></i>
-						<p class="title">帳單管理</p>
-						<li>客戶帳單查詢</li>
-						<li>帳務設定</li>
+						<p class="title">{{'MENU.BILLING_MGT'|translate}}</p>
+						<li>{{'MENU.BILLING_QUERY'|translate}}</li>
+						<li>{{'MENU.BILLING_SETTING'|translate}}</li>
 					</ul>
 					<ul class="col-xs-6 swiper-slide col-sm-2 ">
 						<i class="icon-lock"></i>
-						<p class="title">權限管理</p>
-						<li><a ui-sref=".permissionMgt">使用者權限管理</a></li>
+						<p class="title">{{'MENU.PRIVILEGE_MGT'|translate}}</p>
+						<li><a ui-sref=".permissionMgt">{{'MENU.PRIVILEGE_USER_MGT'|translate}}</a></li>
 					</ul>
 				</div>
 				<div class="swiper-button-prev hidden-xs"><i class="icon-slide-arrow-left"></i></div>
@@ -112,13 +112,17 @@
 				<P>&copy; Wiadvance 2016</P>
 			</div>
 			<div class="col-xs-6 col-sm-9">
-				<div class="dropup pull-right">
-					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
-					<ul class="dropdown-menu dropdown-menu-right">
-						<li><a href="#">中文 - 繁體</a></li>
+				<div class="dropup pull-right" ng-controller="footerCtrl">
+					<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 - 繁體 <span class="caret"></span></button>
+					<ul class="dropdown-menu dropdown-menu-right" ng-model="selectedLanguage">
+						<li><a ng-repeat="l in langs" value="{{l.langKey}}">{{l.lang}}</a></li>
 						<li><a href="#">中文 - 简体</a></li>
 						<li><a href="#">English - US</a></li>
-					</ul>
+					</ul>-->
+					<select class="btn btn-default dropup" ng-init="selectedLanguage=langs[0]" ng-model="selectedLanguage">
+						<option class="dropdown-menu-right" ng-repeat="l in langs" value="{{l.langKey}}">{{l.lang}}</option>
+					</select>
+					<!--<h1>你选择的是: {{selectedLanguage}}</h1>-->
 				</div>
 			</div>
 		</div>

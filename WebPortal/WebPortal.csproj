@@ -71,6 +71,8 @@
     <Content Include="packages.config" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="production\assets\vendors\angular-sanitize\angular-sanitize.js" />
+    <Content Include="production\assets\vendors\angular-sanitize\angular-sanitize.min.js" />
     <Content Include="production\assets\vendors\angular-translate\angular-translate.js" />
     <Content Include="production\assets\vendors\angular-translate\angular-translate.min.js" />
     <Content Include="production\assets\vendors\angular-ui-router\karma.conf.js" />
@@ -143,6 +145,10 @@
     <Content Include="production\assets\vendors\angular\package.json" />
     <Content Include="production\assets\vendors\angular\README.md" />
     <Content Include="production\website\README.md" />
+    <Content Include="production\assets\i18n\en-us.json" />
+    <Content Include="production\assets\i18n\zh-tw.json" />
+    <None Include="production\assets\i18n\zh-cn.json" />
+    <Content Include="production\assets\vendors\angular-sanitize\angular-sanitize.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

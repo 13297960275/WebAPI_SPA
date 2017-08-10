@@ -1,0 +1,32 @@
+﻿{
+  "MENU": {
+    "HELLO": "Hi",
+    "MENU": "Menu",
+    "CLOSE": "Close",
+    "PORTAL_NAME": "Customer Portal",
+    "CUSTOMER_PROFILE": "User Information",
+    "RESET_PWD": "Reset Password",
+    "LOGOUT": "Log Out",
+    "CUSTOMER_MGT": "Customer Manage",
+    "CUSTOMER_INFO_MGT": "Customer Information Manage",
+    "CUSTOMER_SUB_MGT": "Customer Subscription Manage",
+    "KEYSTORE": "KeyStore Manage",
+    "USAGE_MGT": "Usage Manage",
+    "USAGE_MONTHLY": "Monthly Quantity Report",
+    "USAGE_DAILY": "Daily Quantity Report",
+    "USAGE_CURRENT": "Current Quantity Report",
+    "ALARM_SERVICE": "Alarm Service",
+    "ALARM_USAGE_NOTIFICATION": "Usage Alert Notification",
+    "ALARM_USAGE_SETTING": "Usage Alert Setting",
+    "RATE_DISSCOUNT": "Rate & Disscount",
+    "RATE_QUERY": "Rate Inquiry",
+    "DISSCOUNT_SETTING": "Disscount Setting",
+    "BILLING_MGT": "Billing Manage",
+    "BILLING_QUERY": "Customer Billing Manage",
+    "BILLING_SETTING": "Billing Setting",
+    "PRIVILEGE_MGT": "Privilege Manage",
+    "PRIVILEGE_USER_MGT": "User Privilege Manage"
+
+
+  }
+}

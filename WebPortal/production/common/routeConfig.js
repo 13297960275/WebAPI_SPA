@@ -1,6 +1,25 @@
 ﻿'use strict';
 
-var app = angular.module('ecs', ['ui.router', "oc.lazyLoad"]);
+var app = angular.module('ecs', ['ui.router', 'oc.lazyLoad', 'ui.router.state.events', 'pascalprecht.translate']);
+
+app.config(function ($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+        prefix: '../assets/i18n/',
+        suffix: '.json'
+    });
+
+    // 获取当前浏览器的语系：zh-cn、en-us、zh-tw...
+    var langKey = (navigator.browserLanguage || navigator.language).toLowerCase();
+    console.log(langKey);
+
+    if (langKey == '' || langKey == null) {
+        $translateProvider.preferredLanguage('zh-tw');
+        return false;
+    } else {
+        $translateProvider.preferredLanguage(langKey);
+        return false;
+    }
+});
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
@@ -9,6 +28,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: '/login',
         templateUrl: 'login.html',
         controller: 'loginCtrl'
+    })
+
+    .state('en-us', {
+        url: '/en-us'
+        //templateUrl: 'main.html',
+        //controller: 'mainCtrl'
+    })
+
+    .state('zh-cn', {
+        url: '/zh-cn'
+        //templateUrl: 'main.html',
+        //controller: 'mainCtrl'
+    })
+
+    .state('zh-tw', {
+        url: '/zh-tw'
+        //templateUrl: 'main.html',
+        //controller: 'mainCtrl'
     })
 
     .state('main', {
@@ -85,120 +122,108 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-//app.run(['$rootScope', '$location','$log', function ($rootScope, $location) {
-//    /* 监听路由的状态变化 */
-//    $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-//        console.log('route begin change');
-//    });
-//    $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
-//        console.log('route have already changed ：' + $location.path());
-//    });
-
-//    /* 监听路由状态的状态变化 */
-//    $rootScope.$on('$stateChangeStart', function (evt, next, current) {
-//        console.log('state begin change');
-//    });
-//    $rootScope.$on('$stateChangeSuccess', function (evt, current, previous) {
-//        console.log('state have already changed ：' + $location.path());
-//    });
-//}]);
-
 //增加路由跳转时的判断，如果是同一个页面重新刷新，则让其跳转到相应的页面。
 app.run(['$rootScope', '$window', '$location', '$log', function ($rootScope, $window, $location, $log) {
 
     /* 监听路由的状态变化 */
-    $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-        console.log('route begin change');
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        console.log('++++++log $stateChangeStart start+++++++++');
         console.log('arguments = ', arguments);
-        console.log('evt=', evt);
-        console.log('current=', current);
-        console.log('next=', next);
+        console.log('event=', event);
+        console.log('toState=', toState);
+        console.log('toParams=', toParams);
+        console.log('fromState=', fromState);
+        console.log('fromParams=', fromParams);
+        console.log('++++++log $stateChangeStart end+++++++++++');
     });
-    $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
-        console.log('route have already changed ：' + $location.path());
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        console.log('======log $$stateChangeSuccess start======');
         console.log('arguments = ', arguments);
-        console.log('evt=', evt);
-        console.log('current=', current);
-        console.log('previous=', previous);
+        console.log('event=', event);
+        console.log('toState=', toState);
+        console.log('toParams=', toParams);
+        console.log('fromState=', fromState);
+        console.log('fromParams=', fromParams);
+        console.log('======log $$stateChangeSuccess end========');
     });
 
-    var locationChangeStartOff = $rootScope.$on('$locationChangeStart', locationChangeStart);
-    var locationChangeSuccessOff = $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
-    var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);
-    var isSecond = false;
-    //
-    function locationChangeStart(event, newUrl, currentUrl) {
-        //调试用信息，测试无误后可删除
-        console.log('arguments = ', arguments);
-        console.log('newUrl = ', newUrl);
-        console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
-        console.log('currentUrl = ', currentUrl);
-        if (decodeURIComponent(newUrl) == currentUrl) {
-            console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
-            if (currentUrl.indexOf('upload_topic_image') >= 0) {
-                if (isSecond) {
-                    console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
-                    $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
-                    isSecond = false;
-                } else {
-                    isSecond = true;
-                    console.log('isSecond =  ', isSecond);
-                }
-                event.preventDefault();
-                return;
-            }
-        }
-        console.log('locationChangeStart判断结束 ');
+    //var locationChangeStartOff = $rootScope.$on('$locationChangeStart', locationChangeStart);
+    //var locationChangeSuccessOff = $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
+    //var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);
+    //var isSecond = false;
+    ////
+    //function locationChangeStart(event, newUrl, currentUrl) {
+    //    //调试用信息，测试无误后可删除
+    //    console.log('arguments = ', arguments);
+    //    console.log('newUrl = ', newUrl);
+    //    console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
+    //    console.log('currentUrl = ', currentUrl);
+    //    if (decodeURIComponent(newUrl) == currentUrl) {
+    //        console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
+    //        if (currentUrl.indexOf('upload_topic_image') >= 0) {
+    //            if (isSecond) {
+    //                console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+    //                $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+    //                isSecond = false;
+    //            } else {
+    //                isSecond = true;
+    //                console.log('isSecond =  ', isSecond);
+    //            }
+    //            event.preventDefault();
+    //            return;
+    //        }
+    //    }
+    //    console.log('locationChangeStart判断结束 ');
 
-    }
-    function locationChangeSuccess(event, newUrl, currentUrl) {
-        //调试用信息，测试无误后可删除
-        console.log('arguments = ', arguments);
-        console.log('newUrl = ', newUrl);
-        console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
-        console.log('currentUrl = ', currentUrl);
-        if (decodeURIComponent(newUrl) == currentUrl) {
-            console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
-            if (currentUrl.indexOf('upload_topic_image') >= 0) {
-                if (isSecond) {
-                    console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
-                    $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
-                    isSecond = false;
-                } else {
-                    isSecond = true;
-                    console.log('isSecond =  ', isSecond);
-                }
-                event.preventDefault();
-                return;
-            }
-        }
-        console.log('locationChangeSuccess判断结束 ');
-    }
-    function routeChangeStart(event, newUrl, currentUrl) {
-        //调试用信息，测试无误后可删除
-        console.log('routeChangeStart-----开始 ');
-        console.log('arguments = ', arguments);
+    //}
+    //function locationChangeSuccess(event, newUrl, currentUrl) {
+    //    //调试用信息，测试无误后可删除
+    //    console.log('arguments = ', arguments);
+    //    console.log('newUrl = ', newUrl);
+    //    console.log('decode -> newUrl = ', decodeURIComponent(newUrl));
+    //    console.log('currentUrl = ', currentUrl);
+    //    if (decodeURIComponent(newUrl) == currentUrl) {
+    //        console.log('currentUrl.indexof = ', currentUrl.indexOf('upload_topic_image'));
+    //        if (currentUrl.indexOf('upload_topic_image') >= 0) {
+    //            if (isSecond) {
+    //                console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+    //                $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+    //                isSecond = false;
+    //            } else {
+    //                isSecond = true;
+    //                console.log('isSecond =  ', isSecond);
+    //            }
+    //            event.preventDefault();
+    //            return;
+    //        }
+    //    }
+    //    console.log('locationChangeSuccess判断结束 ');
+    //}
+    //function routeChangeStart(event, newUrl, currentUrl) {
+    //    //调试用信息，测试无误后可删除
+    //    console.log('routeChangeStart-----开始 ');
+    //    console.log('arguments = ', arguments);
 
-        if (newUrl != undefined && currentUrl != undefined && newUrl.$$route != undefined && currentUrl.loadedTemplateUrl != undefined) {
-            console.log('newUrl = ', newUrl);
-            console.log('newUrl.url = ', newUrl.$$route.templateUrl);
-            console.log('currentUrl = ', currentUrl.loadedTemplateUrl);
-            if (newUrl.$$route.templateUrl == currentUrl.loadedTemplateUrl) {
-                console.log('currentUrl.indexof = ', currentUrl.loadedTemplateUrl.indexOf('upload_topic_image'));
-                if (currentUrl.loadedTemplateUrl.indexOf('upload_topic_image') >= 0) {
-                    //                        if (isSecond) {
-                    console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
-                    $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
-                    isSecond = false;
-                    //                        } else {
-                    //                            isSecond = true;
-                    //                            console.log('isSecond =  ', isSecond);
-                    //                        }
-                    event.preventDefault();
-                    return;
-                }
-            }
-        }
-        console.log('routeChangeStart-----结束 ');
-    }
+    //    if (newUrl != undefined && currentUrl != undefined && newUrl.$$route != undefined && currentUrl.loadedTemplateUrl != undefined) {
+    //        console.log('newUrl = ', newUrl);
+    //        console.log('newUrl.url = ', newUrl.$$route.templateUrl);
+    //        console.log('currentUrl = ', currentUrl.loadedTemplateUrl);
+    //        if (newUrl.$$route.templateUrl == currentUrl.loadedTemplateUrl) {
+    //            console.log('currentUrl.indexof = ', currentUrl.loadedTemplateUrl.indexOf('upload_topic_image'));
+    //            if (currentUrl.loadedTemplateUrl.indexOf('upload_topic_image') >= 0) {
+    //                //                        if (isSecond) {
+    //                console.log("$location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start')");
+    //                $location.path('http://ctb.qingguo.com/weixinCt/main#/upload_topic_start');
+    //                isSecond = false;
+    //                //                        } else {
+    //                //                            isSecond = true;
+    //                //                            console.log('isSecond =  ', isSecond);
+    //                //                        }
+    //                event.preventDefault();
+    //                return;
+    //            }
+    //        }
+    //    }
+    //    console.log('routeChangeStart-----结束 ');
+    //}
 }]);

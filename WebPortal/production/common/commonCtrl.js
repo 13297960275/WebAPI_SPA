@@ -9,6 +9,14 @@ app.controller('headerCtrl', function ($scope, $state) {
 
 });
 
+app.controller('footerCtrl', function ($scope, $state) {
+    $scope.langs = [
+	    { lang: "中文 - 繁體", langKey: "zh-tw" },
+	    { lang: "中文 - 简体", langKey: "zh-cn" },
+	    { lang: "English - US", langKey: "en-us" }
+    ];
+});
+
 app.controller('menuCtrl', function ($scope, $state) {
     //toggle ECS menu
     jQuery(".arrow-down").hide();
