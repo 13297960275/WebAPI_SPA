@@ -9,7 +9,7 @@ app.controller('headerCtrl', function ($scope, $state) {
 
 });
 
-app.controller('footerCtrl', function ($scope, $state) {
+app.controller('footerCtrl', function ($rootScope, $scope, $state, $translate) {
     $scope.langs = [
 	    { lang: '中文 - 繁體', langKey: 'zh-tw' },
 	    { lang: '中文 - 简体', langKey: 'zh-cn' },
@@ -17,6 +17,7 @@ app.controller('footerCtrl', function ($scope, $state) {
     ];
 
     $scope.langSelected = function (v) {
+        $translate.use(v);
         console.log(v);
         var currentUrlHash = '' + window.location.hash;
         var rout = currentUrlHash.replace(/#+\/+([a-zA-Z0-9_\-])+\//, '.');
@@ -30,6 +31,10 @@ app.controller('footerCtrl', function ($scope, $state) {
         console.log(v);
         $state.go(v);
     };
+
+    //$scope.changeLanguage = function (langKey) {
+    //    $translate.use(langKey);
+    //};
 });
 
 app.controller('menuCtrl', function ($scope, $state) {
@@ -58,6 +63,7 @@ app.controller('menuCtrl', function ($scope, $state) {
 app.controller('loginCtrl', function ($scope, $state) {
     $scope.doLogin = function () {
         $state.go('main.custMgt');
+        //$state.go('partner', { language: 'zh-cn' });
         //alert('haha');
     };
 });

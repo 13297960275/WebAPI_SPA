@@ -29,15 +29,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: 'login.html',
         controller: 'loginCtrl'
     })
-    //.state('base', {
-    //    url: '/:language',
-    //    abstract: true,
-    //    templateUrl: 'login.html',
-    //    controller: 'loginCtrl'
-    //})
-    //.state('base.partner', {
-
-    //})
+    .state('base', {
+        url: '/:language',
+        abstract: true,
+        templateUrl: 'login.html',
+        controller: 'loginCtrl'
+    })
+    .state('base.partner', {
+        url: '/partner/:language',
+        templateUrl: 'main.html',
+        controller: 'mainCtrl'
+    })
 
     .state('en-us', {
         url: '/en-us',
