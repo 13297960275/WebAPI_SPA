@@ -94,6 +94,7 @@
     <Content Include="production\common\login.html" />
     <Content Include="production\common\main.html" />
     <Content Include="production\common\routeConfig.js" />
+    <Content Include="production\common\userFactory.js" />
     <Content Include="production\customerMgt\customerCtrl.js" />
     <Content Include="production\customerMgt\subscriptionCtrl.js" />
     <Content Include="production\website\app.js" />
@@ -165,7 +166,7 @@
     <Content Include="production\assets\js\custom.js" />
     <Content Include="production\assets\js\importRequired.js" />
     <Content Include="production\assets\js\importRequired_head.js" />
-    <Content Include="production\common\Index.html" />
+    <Content Include="production\common\index.html" />
     <Content Include="production\customerMgt\custMgt_add_customer.html" />
     <Content Include="production\customerMgt\custMgt_add_partner.html" />
     <Content Include="production\customerMgt\custMgt_detail_customer.html" />

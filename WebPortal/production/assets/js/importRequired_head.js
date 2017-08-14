@@ -24,6 +24,8 @@ importFile('vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css', 
 importFile('vendors/nprogress/nprogress.css', 'css');
 //tree grid
 importFile('vendors/jquery-treegrid/css/jquery.treegrid.css', 'css');
+//animate
+importFile('vendors/animate.css/css/animate.min.css', 'css');
 
 //custom
 importFile('css/custom.min.css', 'css');
