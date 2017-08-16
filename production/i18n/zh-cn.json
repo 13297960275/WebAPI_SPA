@@ -1,0 +1,32 @@
+﻿{
+  "MENU": {
+    "HELLO": "你好",
+    "MENU": "菜单",
+    "CLOSE": "关闭",
+    "PORTAL_NAME": "客户中心",
+    "CUSTOMER_PROFILE": "用户资料",
+    "RESET_PWD": "重设密码",
+    "LOGOUT": "登出",
+    "CUSTOMER_MGT": "客户管理",
+    "CUSTOMER_INFO_MGT": "客户资料管理",
+    "CUSTOMER_SUB_MGT": "客户订阅管理",
+    "KEYSTORE": "秘钥存储管理",
+    "USAGE_MGT": "用量管理",
+    "USAGE_MONTHLY": "每月用量报表",
+    "USAGE_DAILY": "每日用量报表",
+    "USAGE_CURRENT": "当前用量报表",
+    "ALARM_SERVICE": "告警服务",
+    "ALARM_USAGE_NOTIFICATION": "用量告警通知",
+    "ALARM_USAGE_SETTING": "用量警示设定",
+    "RATE_DISSCOUNT": "费率/折扣",
+    "RATE_QUERY": "费率查询",
+    "DISSCOUNT_SETTING": "客户折扣设定",
+    "BILLING_MGT": "账单管理",
+    "BILLING_QUERY": "客户账单查询",
+    "BILLING_SETTING": "账务设定",
+    "PRIVILEGE_MGT": "权限管理",
+    "PRIVILEGE_USER_MGT": "用户权限管理"
+
+
+  }
+}

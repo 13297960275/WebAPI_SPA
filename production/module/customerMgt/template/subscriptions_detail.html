@@ -1,0 +1,296 @@
+﻿<!-- page content -->
+<div class="row col-xs-12 col-lg-10 col-centered">
+	<div class="page-title col-xs-12">
+		<div class="title_left">
+			<h3>訂閱詳情</h3>
+			<h5>客戶管理 <small>Manage Subscriptions</small></h5>
+		</div>
+	</div>
+	<!--function button-->
+	<div class="row">
+		<button class="btn btn-default pull-right" data-toggle="modal" data-target="#add-sub"><i class="fa fa-plus"></i> Add Subscription</button>
+	</div>
+	<!--/function button-->
+	<!--data grid-->
+	<h4>License-based Subcriptions</h4>
+	<table id="datatable-responsive" class="table tree table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Subcription</th>
+				<th>Subcription ID</th>
+				<th>Quantity</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Office 365 Enterprise E5</td>
+				<td></td>
+				<td>5 Licenses</td>
+				<td>Auto renew on 7/8/18</td>
+				<td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#license-base-detail"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h4>Usage-based Subcriptions</h4>
+	<table id="datatable-responsive2" class="table tree table-striped dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Subcription</th>
+				<th>Subcription ID</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Microsoft Azure</td>
+				<td></td>
+				<td>Active</td>
+				<td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#usage-base-detail"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<!--/data grid-->
+</div>
+<!--/page content -->
+<!--modal-->
+<div class="modal fade" id="license-base-detail" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header modal-header-default">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">訂閱詳情</h4>
+			</div>
+			<div class="modal-body">
+				<h3>金財通商務科技股份有限公司</h3>
+				<h3>Office 365 Enterprise E5</h3>
+				<p>Subscription ID: FD11C314-D8A2-43C7-960D-EB7EFB68D939</p>
+				<h4>Details</h4>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2">Subscription Nickname</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" value="Microsoft Azure">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2">Status</label>
+						<div class="col-sm-10">
+							<label class="col-sm-6"><input type="radio" name="license-status" class="flat"> Active <p class="descr-text">Renew on Wednesday, August 15, 2018</p></label>
+							<label class="col-sm-6"><input type="radio" name="license-status" class="flat"> Suspend</label>
+						</div>
+					</div>
+					<div class="form-group form-inline">
+						<label class="col-sm-2">Quantity</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" value="1"> License
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+				<button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="usage-base-detail" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header modal-header-default">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">訂閱詳情</h4>
+			</div>
+			<div class="modal-body">
+				<h3>金財通商務科技股份有限公司</h3>
+				<h3>Microsoft Azure</h3>
+				<p>Subscription ID: FD11C314-D8A2-43C7-960D-EB7EFB68D939</p>
+				<h4>Details</h4>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2">Subscription Nickname</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" value="Microsoft Azure">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2">Status</label>
+						<div class="col-sm-10">
+							<label class="col-sm-6"><input type="radio" name="license-status" class="flat"> Active <p class="descr-text">Renew on Wednesday, August 15, 2018</p></label>
+							<label class="col-sm-6"><input type="radio" name="license-status" class="flat"> Suspend</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2">Quantity</label>
+						<div class="col-sm-10">
+							<p>Usage-based</p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+				<button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="add-sub" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header modal-header-default">
+				<button type="button" id="closeSub" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Subscription for</h4>
+				<h3>Waremelon</h3>
+			</div>
+			<div class="modal-body">
+				<div id="wizard" class="form_wizard wizard_horizontal">
+					<ul class="wizard_steps">
+						<li>
+							<a href="#step-1">
+								<span class="step_no">1</span>
+								<span class="step_descr">
+									Step 1<br />
+									<small>Subscription</small>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#step-2">
+								<span class="step_no">2</span>
+								<span class="step_descr">
+									Step 2<br />
+									<small>Review</small>
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="row ">
+						<!--step1-->
+						<div id="step-1">
+							<h3>Subscription</h3>
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="control-label col-sm-1">Catalog</label>
+									<div class="col-sm-11">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="male"> Enterprise (1)
+											</label>
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="female"> Small Business
+											</label>
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="female" checked> Government (1)
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="input-group col-sm-11 col-sm-offset-1">
+									<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+									<input type="text" class="form-control" placeholder="Quick Search" aria-describedby="basic-addon1">
+								</div>
+								<div class="input-group col-sm-11  col-sm-offset-1">
+									<div class="list-group checkbox-list col-xs-12">
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Active Directory Basic (Government Pricing)</label> <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Active Directory Premium P1 (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Information Protection Plan 1 (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Enterprise to Retail (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Enterprise to Talent (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Functional to Retail (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 for Operations Activty, Enterpise Edition (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--step2-->
+						<div id="step-2">
+							<h3>Review</h3>
+							<p class="description"> Select Submit to confirm information below. Select Update to make changes</p>
+							<h4>Subscription <a class="btn btn-sm btn-primary sub-update"><i class="fa fa-pencil"></i>  Update </a></h4>
+							<div class="row">
+								<div class="col-sm-6 col-sm-offset-6">Quantity</div>
+								<div class="col-sm-6"><b>Government</b><p>Dynamic 365 for Operations, Enterprise Edition Device add-on for AX Task Device(Quallified offer) (Government Pricing)</p></div>
+								<div class="col-sm-6">
+									<p>1 Licenses</p>
+								</div>
+							</div>
+							<div class="row space-top-2">
+								<div class="col-sm-6"><b>Enterprise</b><p>Dynamic 365 for Operations, Enterprise Edition Device add-on for AX Task Device(Quallified offer) (Enterprise Pricing)</p></div>
+								<div class="col-sm-6">
+									<p>2 Licenses</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--/modal-->
+<!-- Datatables -->
+<script>
+	jQuery(document).ready(function () {
+		jQuery('#datatable-responsive, #datatable-responsive2').DataTable({
+			lengthChange: false,
+			searching: false,
+			order: false,
+			bSort: false
+		});
+	});
+</script>
+<!-- /Datatables -->
+
+<script>
+	jQuery('#wizard').smartWizard();
+	jQuery('input').iCheck({
+		checkboxClass: 'icheckbox_flat-green',
+		radioClass: 'iradio_flat-green'
+	});
+</script>
+
+<!--license input control-->
+<script>
+	jQuery('.license-input').hide();
+	jQuery('.sub-item label').click(function () {
+		var itemCheckobx = jQuery(this).find('input[type=checkbox]');
+		if (itemCheckobx.is(":checked")) {
+			jQuery(this).next('.license-input').show();
+		} else {
+			jQuery(this).next('.license-input').hide();
+		}
+	});
+</script>
+
+<!--smartWizard goToStep-->
+<script>
+	jQuery(".sub-update").click(function () {
+		jQuery('#wizard').smartWizard("goToStep", 1);
+	});
+	jQuery(".button-cancel").click(function () {
+		jQuery('#add-sub').modal('hide');
+	});
+</script>

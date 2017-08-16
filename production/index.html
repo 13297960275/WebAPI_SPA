@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head ng-app="ecs">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+	<title>WiAdvance Customer Billing Portal</title>
+	<script type="text/javascript" src="js/swan/angular/angular.js"></script>
+    <script type="text/javascript" src="js/swan/angular/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/swan/bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="js/swan/dialog/sng-dialog.js"></script>
+
+    <script type="text/javascript" src="js/swan/oclazyload/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="js/swan/angular/angular-cookies.js"></script>
+    <script type="text/javascript" src="js/swan/angular/angular-local-storage.min.js"></script>
+    <script type="text/javascript" src="js/swan/translate/angular-translate.js"></script>
+    <script type="text/javascript" src="js/swan/translate/angular-translate-storage-cookie.js"></script>
+    <script type="text/javascript" src="js/swan/translate/angular-translate-storage-local.js"></script>
+    <script type="text/javascript" src="js/swan/translate/angular-translate-loader-static-files.js"></script>
+    <script type="text/javascript" src="js/swan/translate/angular-translate-rule.js"></script>
+    <!-- 引入脚本 -->
+    <script type="text/javascript" src="assets/js/importRequired.js"></script>
+
+    <!-- develop Javascripts-->
+    <script type="text/javascript" src="js/GlobalStorage.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/swan/oclazyloadConfig.js"></script>
+    <script type="text/javascript" src="js/config/config.js"></script>
+    <!--routes -->
+    <script type="text/javascript" src="js/routeConfig.js"></script>
+    <!-- <script type="text/javascript" src="module/login/routes.login.js"></script>
+    <script type="text/javascript" src="module/setting/routes.setting.js"></script>
+    <script type="text/javascript" src="module/platform/routes.platform.js"></script>
+    <script type="text/javascript" src="module/system/routes.system.js"></script>
+    <script type="text/javascript" src="module/video/routes.video.js"></script> -->
+</head>
+
+<body class="nav-md" ng-controller="indexCtrl" change-lang language="{{language.lang}}">
+	<section ui-view></section>
+</body>
+</html>
