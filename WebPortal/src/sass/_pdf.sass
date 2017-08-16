@@ -1,0 +1,69 @@
+.invoice
+	line-height: 1.5
+	.page-container
+		border-top: 0
+	header
+		font-size: 80%
+		text-align: right
+		padding-bottom: 2rem
+		border-bottom: 3px solid $color-primary	
+		overflow: auto
+		.logo
+			width: 200px
+			
+	title
+		display: block
+		line-height: 2
+		font-weight: 500
+		color: $color-primary
+	caption
+		color: $color-dark-gray
+		font-weight: 500
+	h1, h3
+		color: $color-primary
+		
+	.page-title
+		border: 0
+	.head-info
+		color: $color-font-base
+		text-align: left
+		.box
+			border-top: 1px solid $color-gray
+			border-bottom: 1px solid $color-gray
+			padding: 0.3rem
+			+xs
+				border-top: 0
+			
+	.billing-info
+		.info-list li
+			margin-bottom: 1rem
+	table
+		tr
+			th
+				border-bottom: 5px solid $color-gray !important
+				background: $color-light-gray
+		td:not(:first-child)
+			text-align: right
+		.text-left
+			text-align: left !important
+		.text-center
+			text-align: center !important
+		.subName
+			font-weight: 500
+		.total
+			font-weight: 500
+			text-align: right
+			border-bottom: 0 !important
+			td
+				border-top: 0 !important
+			&-spacer
+				border-top: 2px solid $color-gray
+	footer
+		position: absolute
+		bottom: 0
+		height: auto
+		padding: 1rem
+		line-height: inherit
+		background: none
+		.spacer-line
+			border-top: 3px solid $color-primary

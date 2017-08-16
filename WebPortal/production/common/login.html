@@ -1,3 +1,116 @@
-﻿<div ng-controller="loginCtrl">
-	<button ng-click="doLogin()">denglu</button>
+﻿<!--background style-->
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background: url(../assets/images/login-bg.jpg) center center fixed no-repeat;
+		-moz-background-size: cover;
+		background-size: cover;
+	}
+</style>
+<!--/background style-->
+<div ng-controller="loginCtrl">
+	<div id="mask">
+		<div class="login_feature col-md-6 hidden-xs">
+			<ul>
+				<li class="col-xs-6 col-sm-6">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-pie-chart fa-stack-1x fa-inverse"></i>
+					</span> <span class="hidden-xs">Awesome Analytics Reports</span>
+				</li>
+				<li class="col-xs-6 col-sm-6">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
+					</span> <span class="hidden-xs">Customer ／ Subscription Management</span>
+				</li>
+				<li class="col-xs-6 col-sm-6">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-sellsy fa-stack-1x fa-inverse"></i>
+					</span> <span class="hidden-xs">Usage Monitoring</span>
+				</li>
+				<li class="col-xs-6 col-sm-6">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-shirtsinbulk fa-stack-1x fa-inverse"></i>
+					</span>  <span class="hidden-xs">Auto Billing and Invoice</span>
+				</li>
+			</ul>
+		</div>
+		<div class="login_wrapper col-xs-12 col-md-6">
+			<div class="animate form login_form col-centered">
+				<section class="login_content">
+					<div class="logo">
+						<img src="assets/images/customer-logo.svg">
+					</div>
+					<form class="form-horizontal">
+						<h1>Customer Billing Portal</h1>
+						<div class="login_feature col-sm-12">
+							<ul class="visible-xs">
+								<li class="col-xs-6 col-sm-6">
+									<span class="fa-stack fa-lg">
+										<i class="fa fa-circle fa-stack-2x"></i>
+										<i class="fa fa-pie-chart fa-stack-1x fa-inverse"></i>
+									</span> <span class="hidden-xs">Awesome Analytics Reports</span>
+								</li>
+								<li class="col-xs-6 col-sm-6">
+									<span class="fa-stack fa-lg">
+										<i class="fa fa-circle fa-stack-2x"></i>
+										<i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
+									</span> <span class="hidden-xs">Customer ／ Subscription Management</span>
+								</li>
+								<li class="col-xs-6 col-sm-6">
+									<span class="fa-stack fa-lg">
+										<i class="fa fa-circle fa-stack-2x"></i>
+										<i class="fa fa-sellsy fa-stack-1x fa-inverse"></i>
+									</span> <span class="hidden-xs">Usage Monitoring</span>
+								</li>
+								<li class="col-xs-6 col-sm-6">
+									<span class="fa-stack fa-lg">
+										<i class="fa fa-circle fa-stack-2x"></i>
+										<i class="fa fa-shirtsinbulk fa-stack-1x fa-inverse"></i>
+									</span>  <span class="hidden-xs">Auto Billing and Invoice</span>
+								</li>
+							</ul>
+
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="text" class="form-control" placeholder="someone@example.com">
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+								<input type="text" class="form-control" placeholder="Password" id="password" value="">
+							</div>
+							<div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> You are not allowed to sign in.</div>
+							<div>
+								<a class="btn btn-block btn-primary submit" ng-click="doLogin();">Login</a>
+							</div>
+							<div class="clearfix"></div>
+							<p class="notice">Please sign in with your Microsoft account.<br /><small>Can't sign in or no account? Please <a href="https://www.wiadvance.com/contact" target="_blank">contact us</a>.</small></p>
+							<div class="separator">
+								<div class="clearfix"></div>
+								<div class="separator">
+									<p class="copyright">©2017 WiAdvance Technology Co.<br />All Rights Reserved.</p>
+								</div>
+							</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>
+<script>
+	//check login data
+	$('.alert-danger').hide();
+	$('#password').keyup(function () {
+		var pw = $(this).val();
+		if (pw == "0000") {
+			$('.alert-danger').show();
+		} else {
+			$('.alert-danger').hide();
+		}
+	});
+
+</script>

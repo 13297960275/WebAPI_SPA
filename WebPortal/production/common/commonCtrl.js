@@ -6,30 +6,37 @@ app.controller('indexCtrl', function ($scope, $state) {
 });
 
 app.controller('headerCtrl', function ($scope, $state) {
+    $scope.doLogout = function ($scope, $state) {
+        $state.go('login');
+    };
 
+    $scope.resetPwd = function ($scope, $state) {
+        alert('haha');
+    };
 });
 
 app.controller('footerCtrl', function ($rootScope, $scope, $state, $translate) {
     $scope.langs = [
+	    { lang: 'English - US', langKey: 'en-us' },
 	    { lang: '中文 - 繁體', langKey: 'zh-tw' },
-	    { lang: '中文 - 简体', langKey: 'zh-cn' },
-	    { lang: 'English - US', langKey: 'en-us' }
+	    { lang: '中文 - 简体', langKey: 'zh-cn' }
     ];
 
     $scope.langSelected = function (v) {
         $translate.use(v);
-        console.log(v);
-        var currentUrlHash = '' + window.location.hash;
-        var rout = currentUrlHash.replace(/#+\/+([a-zA-Z0-9_\-])+\//, '.');
-        console.log(currentUrlHash);
-        console.log(rout);
-        if (currentUrlHash == '' || currentUrlHash == null) {
-            v = 'zh-tw' + rout;
-        } else {
-            v += rout;
-        }
-        console.log(v);
-        $state.go(v);
+        //$scope.$emit('langChanged', v);
+        //console.log(v);
+        //var currentUrlHash = '' + window.location.hash;
+        //var rout = currentUrlHash.replace(/#+\/+([a-zA-Z0-9_\-])+\//, '.');
+        //console.log(currentUrlHash);
+        //console.log(rout);
+        //if (currentUrlHash == '' || currentUrlHash == null) {
+        //    v = 'zh-tw' + rout;
+        //} else {
+        //    v += rout;
+        //}
+        //console.log(v);
+        //$state.go(v);
     };
 
     //$scope.changeLanguage = function (langKey) {
@@ -61,10 +68,16 @@ app.controller('menuCtrl', function ($scope, $state) {
 });
 
 app.controller('loginCtrl', function ($scope, $state) {
+    var redirectUri = 'http://localhost:50965/production/common/index.html#/main.custMgt';
+    var clientId = '80c63a44-4c0e-4ebd-b898-4f5f0b8a2e8a';
+    var str = '?response_type=code';
+    str += '&redirect_uri=' + redirectUri;
+    str += '&client_id=' + clientId;
+    str += '&prompt=login';
+    var loginUrl = 'https://login.microsoftonline.com/common/oauth2/authorize' + str;
     $scope.doLogin = function () {
         $state.go('main.custMgt');
-        //$state.go('partner', { language: 'zh-cn' });
-        //alert('haha');
+        //window.location.href = loginUrl;
     };
 });
 

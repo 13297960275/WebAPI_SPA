@@ -5,28 +5,32 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
-
+        .state('app', {
+            url: '/app/:app',
+            abstract: true,
+            controller: 'listcontroller'
+        })
         // HOME STATES AND NESTED VIEWS ========================================
-        .state('home', {
+        .state('app.home', {
             url: '/home',
             templateUrl: 'partial-home.html'
         })
 
         // nested list with custom controller
-        .state('home.list', {
+        .state('app.home.list', {
             url: '/list',
             templateUrl: 'partial-home-list.html',
             controller: 'listcontroller'
         })
 
         // nested list with just some random string data
-        .state('home.paragraph', {
+        .state('app.home.paragraph', {
             url: '/paragraph',
             template: 'I could sure use a drink right now.'
         })
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
+        .state('app.about', {
             url: '/about',
             views: {
                 '': { templateUrl: 'partial-about.html' },

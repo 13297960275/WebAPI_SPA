@@ -5,8 +5,8 @@ document.write('<script type="text/javascript" src="../assets/vendors/jquery/dis
 document.write('<script type="text/javascript" src="../assets/vendors/angular/angular.min.js"><\/script>');
 document.write('<script type="text/javascript" src="../assets/vendors/angular-ui-router/release/angular-ui-router.min.js"><\/script>');
 document.write('<script type="text/javascript" src="../assets/vendors/angular-ui-router/release/stateEvents.min.js"><\/script>');
-document.write('<script type="text/javascript" src="../assets/vendors/angular-translate/angular-sanitize.min.js"><\/script>');
 document.write('<script type="text/javascript" src="../assets/vendors/angular-translate/angular-translate.min.js"><\/script>');
+//document.write('<script type="text/javascript" src="../assets/vendors/angular-sanitize/angular-sanitize.min.js"><\/script>');
 document.write('<script type="text/javascript" src="../assets/vendors/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"><\/script>');
 
 //oclazyload

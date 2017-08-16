@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice</title>
+    <!-- inquire input file -->
+    <script src="../assets/js/importRequired_head.js"></script>
+</head>
+
+<body class="invoice" ng-app="">
+    <div class="container-fuild">
+        <!-- page content -->
+        <div class="page-container block-padding">
+            <div class="row col-xs-12 col-lg-10 col-centered">
+                <header>
+                    <div class="col-md-4 pull-right">
+                        <img src="../assets/images/customer-logo.svg" class="logo space-1">
+                        <p>18F., No.88-1, Sec. 1, Xintai 5th Rd., Xizhi Dist.,<br> New Taipei City 221, Taiwan</p>
+                    </div>   
+                </header>
+                <div class="page-title col-xs-12 space-top-3">
+                    <div class="title_left">
+                        <h1>INVOICE</h1>
+                    </div>
+                </div>
+
+                <div class="head-info">
+                    <div class="col-md-3">
+                        <div class="box">
+                            <title>INVOICE NO.</title>
+                            <p>2017060010</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <title>BILLING PERIOD</title>
+                            <p>2017/07/01-2017/07/30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <title>INVOICE DATE</title>
+                            <p>2017/08/01</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <title>DUE DATE</title>
+                            <p>2017/08/15</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="billing-info space-top-3">
+                    <div class="col-md-6">
+                        <title>Bill To</title>
+                        <ul class="info-list">
+                            <li>Name</li>
+                            <li>Company Name</li>
+                            <li>VAT Number</li>
+                            <li>Street Address</li>
+                            <li>City, ST ZIP Code</li>
+                            <li>Phone</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <title>Bill From</title>
+                        <ul class="info-list">
+                            <li>Name</li>
+                            <li>Company Name</li>
+                            <li>VAT Number</li>
+                            <li>Street Address</li>
+                            <li>City, ST ZIP Code</li>
+                            <li>Phone</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="total-list space-top-3">
+                    <h3>TOTAL AMOUNT <small>(CURRENCY:TWD)</small></h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Description</th>
+                                <th class="text-right" width="15%">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>[Company Name] Company A</td>
+                                <td width="15%">7,400.90</td>
+                            </tr>
+                            <tr>
+                                <td>[Company Name] Company B</td>
+                                <td>7,400.90</td>
+                            </tr>
+                            <tr>
+                                <td>[Company Name] Company C</td>
+                                <td>7,400.90</td>
+                            </tr>
+                            <tr class="total  total-spacer">
+                                <td>Total Amount</td>
+                                <td>860,002.40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="detail-list space-top-3">
+                    <h3>DETAIL</h3>
+                    <table class="table">
+                        <caption>Company Name: [Compay Name 1]</caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Description</th>
+                                <th class="text-center">Unit</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right" width="15%">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="6">Subscription Name #1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="text-left">[Resource Name] STORAGE- STANDARD IO - TABLE</td>
+                                <td class="text-center">GB</td>
+                                <td>59.35</td>
+                                <td>245.00</td>
+                                <td>980.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="text-left">[Resource Name] PREMIUM VM SUPPORT HOURS</td>
+                                <td class="text-center">HOURS</td>
+                                <td>24</td>
+                                <td>124.00</td>
+                                <td>2,976.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">Subscription Name #1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="text-left">[Resource Name] STORAGE- STANDARD IO - TABLE</td>
+                                <td class="text-center">GB</td>
+                                <td>59.35</td>
+                                <td>245.00</td>
+                                <td>980.00</td>
+                            </tr>
+                            <tr class="total total-spacer">
+                                <td colspan="5">Subtotal</td>
+                                <td>6,436.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Tax</td>
+                                <td>514.90</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Discounts</td>
+                                <td>-450.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Total Amount</td>
+                                <td>7,400.90</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table space-top-2">
+                        <caption>Company Name: [Compay Name 2]</caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Description</th>
+                                <th class="text-center">Unit</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right" width="15%">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="6" class="subName">Subscription Name #1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="text-left">[Resource Name] STORAGE- STANDARD IO - TABLE</td>
+                                <td class="text-center">GB</td>
+                                <td>59.35</td>
+                                <td>245.00</td>
+                                <td>980.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="text-left">[Resource Name] PREMIUM VM SUPPORT HOURS</td>
+                                <td class="text-center">HOURS</td>
+                                <td>24</td>
+                                <td>124.00</td>
+                                <td>2,976.00</td>
+                            </tr>
+                            <tr class="total total-spacer">
+                                <td colspan="5">Subtotal</td>
+                                <td>6,436.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Tax</td>
+                                <td>514.90</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Discounts</td>
+                                <td>-450.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Total Amount</td>
+                                <td>7,400.90</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table space-top-2">
+                        <caption>Company Name: [Compay Name 3]</caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Description</th>
+                                <th class="text-center">Unit</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right" width="15%">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="6" class="subName">Subscription Name #1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="text-left">[Resource Name] STORAGE- STANDARD IO - TABLE</td>
+                                <td class="text-center">GB</td>
+                                <td>59.35</td>
+                                <td>245.00</td>
+                                <td>980.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="text-left">[Resource Name] PREMIUM VM SUPPORT HOURS</td>
+                                <td class="text-center">HOURS</td>
+                                <td>24</td>
+                                <td>124.00</td>
+                                <td>2,976.00</td>
+                            </tr>
+                            <tr class="total total-spacer">
+                                <td colspan="5">Subtotal</td>
+                                <td>6,436.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Tax</td>
+                                <td>514.90</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Discounts</td>
+                                <td>-450.00</td>
+                            </tr>
+                            <tr class="total">
+                                <td colspan="5">Total Amount</td>
+                                <td>7,400.90</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--/page content -->
+
+        <!-- footer-->
+        <footer class="space-top-3">
+            <div class="row col-xs-12 col-lg-10 col-centered spacer-line">
+                <title>Terms</title>
+                <p>Thank you for your business. The invoice is due within [xx] days from the invoice date.<br> After 30 days, late payments are subject to an additional daily late fee of 0.5% of the unpaid amount. Recurring late payments may lead to a deposit requirement on future services.</p>
+            </div>
+        </footer>
+        <!--/footer-->
+    </div>
+
+
+    <!-- inquire input custom file -->
+    <script src="../assets/js/importRequired.js"></script>
+
+
+</body>
+
+</html>

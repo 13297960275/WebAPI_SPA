@@ -23,8 +23,8 @@
 							</a>
 							<ul class="dropdown-menu dropdown-usermenu pull-right">
 								<li><a href="javascript:;"><i class="fa fa-vcard-o"></i>  {{'MENU.CUSTOMER_PROFILE'|translate}}</a></li>
-								<li><a href="../setting/reset-pw.html"><i class="fa fa-gear"></i>  {{'MENU.RESET_PWD'|translate}}</a></li>
-								<li><a href="../login.html"><i class="fa fa-sign-out"></i> {{'MENU.LOGOUT'|translate}}</a></li>
+								<li><a ng-click="resetPwd();"><i class="fa fa-gear"></i>  {{'MENU.RESET_PWD'|translate}}</a></li>
+								<li><a ng-click="doLogout();"><i class="fa fa-sign-out"></i> {{'MENU.LOGOUT'|translate}}</a></li>
 							</ul>
 						</li>
 					</ul>
