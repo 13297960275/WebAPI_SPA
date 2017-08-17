@@ -1,0 +1,334 @@
+﻿<!-- page content -->
+<div class="row col-xs-12 col-lg-10 col-centered">
+	<!--page title-->
+	<div class="page-title col-xs-12">
+		<div class="title_left">
+			<h3>ADD CUSTOMER</h3>
+			<h5>客戶管理 <small>You're just a few steps from creating a customer.</small></h5>
+		</div>
+	</div>
+	<!--/page title-->
+	<!--data content-->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="x_panel">
+				<div class="x_content">
+					<!-- Smart Wizard -->
+					<div id="wizard" class="form_wizard wizard_horizontal">
+						<ul class="wizard_steps">
+							<li>
+								<a href="#step-1">
+									<span class="step_no">1</span>
+									<span class="step_descr">
+										Step 1<br />
+										<small>Account Info</small>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#step-2">
+									<span class="step_no">2</span>
+									<span class="step_descr">
+										Step 2<br />
+										<small>Subscription</small>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#step-3">
+									<span class="step_no">3</span>
+									<span class="step_descr">
+										Step 3<br />
+										<small>Preview</small>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#step-4">
+									<span class="step_no">4</span>
+									<span class="step_descr">
+										Step 4<br />
+										<small>Confirmation</small>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!--step1-->
+						<div id="step-1">
+							<h2 class="StepTitle">Step 1. Account Info</h2>
+							<p class="descr-text">description...</p>
+							<form class="form-horizontal  form-label-right">
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Choose Partner</label>
+									<div class="col-sm-10">
+										<select name="" class="form-control">
+											<option value="">Wiadvance</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Customer Type</label>
+									<div class="col-sm-10">
+										<label class="radio-inline"><input type="radio" class="flat" name="customerType"> CSP</label>
+										<label class="radio-inline"><input type="radio" class="flat" name="customerType"> EA</label>
+										<label class="radio-inline"><input type="radio" class="flat" name="customerType"> OPEN</label>
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Company Name</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" placeholder="Enter Company Name">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Company Type</label>
+									<div class="col-sm-10">
+										<select name="" class="form-control">
+											<option value="">Manafacture</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Country / Region<br /><small class="descr-text">What is this?</small></label>
+									<div class="col-sm-2">
+										<select name="" class="form-control pull-left" disabled>
+											<option value="">Taiwan</option>
+										</select>
+									</div>
+									<label class="col-sm-1">State</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control">
+									</div>
+									<label class="col-sm-1">Zipcode</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Address</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">TAX ID</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Primary Domain Name<br><small class="descr-text">Why can't I change this?</small></label>
+									<div class="col-sm-10">
+										<div class="input-group">
+											<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+											<span class="input-group-addon" id="basic-addon3">.onmicrosoft.com</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Contact Name</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="col-sm-4">Phone No.</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="col-sm-4">Mobile</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">E-mail</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12">
+									<label class="col-sm-2">Status</label>
+									<div class="col-sm-10">
+										<label class="radio-inline"><input type="radio" class="flat" name="Status"> Active</label>
+										<label class="radio-inline"><input type="radio" class="flat" name="Status"> Disable</label>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--step2-->
+						<div id="step-2">
+							<h2 class="StepTitle">Step 2. Subscription</h2>
+							<p class="descr-text">description...</p>
+							<form class="form-horizontal form-label-right">
+								<div class="form-group">
+									<label class="control-label col-sm-1">Catalog</label>
+									<div class="col-sm-11">
+										<div id="gender" class="btn-group" data-toggle="buttons">
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="male"> Enterprise (1)
+											</label>
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="female"> Small Business
+											</label>
+											<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+												<input type="radio" name="gender" value="female" checked> Government (1)
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="input-group col-sm-11 pull-right">
+									<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+									<input type="text" class="form-control" placeholder="Quick Search" aria-describedby="basic-addon1">
+								</div>
+								<div class="form-horizontal row  col-sm-11 pull-right">
+									<div class="list-group checkbox-list col-xs-12">
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Active Directory Basic (Government Pricing)</label> <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Active Directory Premium P1 (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Azure Information Protection Plan 1 (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Enterprise to Retail (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Enterprise to Talent (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 Cloud Add-on From AX Functional to Retail (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+										<li class="form-group form-inline sub-item">
+											<label><input type="checkbox" class="item-check"> Dyn365 for Operations Activty, Enterpise Edition (Government Pricing)</label>  <span class="pull-right license-input text-right"><input type="text" class="form-control text-right"> Licenses </span>
+										</li>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--step3-->
+						<div id="step-3">
+							<h2 class="StepTitle">Step 3. Preview</h2>
+							<p class="descr-text">Select Submit to confirm the infomation below. Select <b>Update</b> to make changes.</p>
+							<h4>Account info <a href="#" class="btn btn-sm btn-primary info-update"><i class="fa fa-pencil"></i> Update </a></h4>
+							<div class="row">
+								<div class="col-sm-6">Company</div>
+								<div class="col-sm-6">
+									<ul>
+										<li>textcompanyname</li>
+										<li>Address line</li>
+										<li>City TPE 100100</li>
+										<li>hiihcherry.onmicrosoft.com</li>
+									</ul>
+								</div>
+							</div>
+							<div class="row space-top-1">
+								<div class="col-sm-6">Primary contact info</div>
+								<div class="col-sm-6">
+									<ul>
+										<li>Cherry Tasi</li>
+										<li>hihi@hiihcherry.onmicrosoft.com</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="space-top-2">Subscription <a href="#" class="btn btn-sm btn-primary sub-update"><i class="fa fa-pencil"></i>  Update </a></h4>
+							<div class="row">
+								<div class="col-sm-6 col-sm-offset-6">Quantity</div>
+								<div class="col-sm-6"><b>Enterprise</b><p>Microsoft Azure Subscription ID</p></div>
+								<div class="col-sm-6">
+									<p>1 Licenses</p>
+								</div>
+							</div>
+							<div class="row space-top-1">
+								<div class="col-sm-6 col-sm-offset-6">Quantity</div>
+								<div class="col-sm-6"><b>Enterprise</b><p>Dyn365 Cloud Add-on From AX Enterprise to Retail</p></div>
+								<div class="col-sm-6">
+									<p>1 Licenses</p>
+								</div>
+							</div>
+						</div>
+						<!--step4-->
+						<div id="step-4">
+							<h2 class="StepTitle">Step 4. Confirmation</h2>
+							<p class="descr-text">The order has been submitted. It may take a few minutes to process. Be sure to copy the following customer and subscription information for your records.</p>
+							<h4>Setup info</h4>
+							<div class="row">
+								<div class="col-sm-6">Microsoft ID</div>
+								<div class="col-sm-6">
+									<p>7a4eda11-e5e0-489c-86b5-a94ee24e1121</p>
+								</div>
+								<div class="col-sm-6">Admin user account</div>
+								<div class="col-sm-6">
+									<p>admin@cherrytest.onmicrofost.com</p>
+								</div>
+								<div class="col-sm-6">Password</div>
+								<div class="col-sm-6">
+									<b>_Tc7bfC7</b> <button class="btn btn-xs btn-primary"><i class="fa fa-copy"></i> Copy</button>
+								</div>
+								<div class="col-sm-6 col-sm-offset-6 space-top-1">
+									<p class="alert alert-danger"><i class="fa fa-warning"></i> Please copy and store this password. After you leave this page, you can't view this password agan.</p>
+								</div>
+							</div>
+							<h4 class="space-top-2">Account info</h4>
+							<div class="row">
+								<div class="col-sm-6">Company</div>
+								<div class="col-sm-6">
+									<ul>
+										<li>textcompanyname</li>
+										<li>Address line</li>
+										<li>City TPE 100100</li>
+										<li>hiihcherry.onmicrosoft.com</li>
+									</ul>
+								</div>
+								<div class="clearfix"></div>
+								<div class="col-sm-6">Primary contact info</div>
+								<div class="col-sm-6">
+									<ul>
+										<li>Cherry Tasi</li>
+										<li>hihi@hiihcherry.onmicrosoft.com</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="space-top-2">Subscriptions</h4>
+							<div class="row">
+								<div class="col-sm-6"><b>Enterprise</b><p>Microsoft Azure Subscription ID</p></div>
+								<div class="col-sm-6">
+									<ul>
+										<li>Usage-based</li>
+										<li>FD11C314-D8A2-43C7-960D-EB7EFB68D939</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End SmartWizard -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/data content-->
+</div>
+<!--/page content -->
+<!--modal-->
+<div class="modal fade" id="cancel-msg" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header modal-header-danger">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-warning"></i> Cancel</h4>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure you want to abandon your edits?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-chevron-left"></i> Cancel</button>
+				<button type="button" class="btn btn-danger" onclick="location.href='custMgt_list.html'"><i class="fa fa-check"></i> OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal-->

@@ -1,0 +1,1 @@
+angular.module('Module.billingMgt', ['ui.router']);

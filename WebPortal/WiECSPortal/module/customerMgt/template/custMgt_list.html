@@ -1,0 +1,115 @@
+﻿<section ng-controller="customerCtrl" ui-view>
+<!-- page content -->
+<div class="row col-xs-12 col-lg-10 col-centered">
+	<div class="page-title col-xs-12">
+		<div class="title_left">
+			<h3>客戶資料管理</h3>
+			<h5>客戶管理 <small>Manage your resellers and customers</small></h5>
+		</div>
+	</div>
+	<!--search-->
+	<div class="search-block col-xs-12">
+		<div class="form-group col-md-6 col-xs-12">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search by Company Name">
+				<span class="input-group-btn">
+					<button class="btn btn-success"><i class="fa fa-search"></i></button>
+				</span>
+			</div>
+		</div>
+		<div class="form-group col-md-6 col-xs-12">
+			<div class="dropdown pull-right">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<i class="fa fa-plus"></i> Add
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a ng-click="goToAddPartner();">Reseller ／ Partner</a></li>
+					<li><a ng-click="goToAddCustomer();">Customer</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--/search-->
+	<!--data grid-->
+	<table id="datatable-responsive" class="table tree dt-responsive nowrap order-column jambo_table bulk_action" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Customer Type</th>
+				<th>Customer Name</th>
+				<th>Domain Name</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="treegrid-1 parentLev">
+				<td>Reseller</td>
+				<td>Wiadvance</td>
+				<td>wiadvance.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToPartnerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-2 treegrid-parent-1">
+				<td>Customer</td>
+				<td>Apple</td>
+				<td>apple.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToCustomerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-3 parentLev">
+				<td>Reseller</td>
+				<td>Reseller 1</td>
+				<td>aaa.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToPartnerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-4 treegrid-parent-3">
+				<td>Customer</td>
+				<td>R1_customer1</td>
+				<td>customer1.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToCustomerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-4 treegrid-parent-3">
+				<td>Customer</td>
+				<td>R1_customer2</td>
+				<td>customer2.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToCustomerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-5 parentLev">
+				<td>Reseller</td>
+				<td>Reseller2</td>
+				<td>zzz.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToPartnerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-6 treegrid-parent-5">
+				<td>Customer</td>
+				<td>R2_customer1</td>
+				<td>xxx.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToCustomerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-7 treegrid-parent-5 parentLev">
+				<td>Reseller</td>
+				<td>R2_reseller1</td>
+				<td>ccccc.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToPartnerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+			<tr class="treegrid-8 treegrid-parent-7">
+				<td>Customer</td>
+				<td>R2_reseller1_c1</td>
+				<td>xxx.com</td>
+				<td>Active</td>
+				<td><a ng-click="goToCustomerDetail();" class="btn btn-xs btn-primary"><i class="fa fa-file-text-o"></i> Detail</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<!--/data grid-->
+</div>
+<!--/page content -->
+</section>
+
