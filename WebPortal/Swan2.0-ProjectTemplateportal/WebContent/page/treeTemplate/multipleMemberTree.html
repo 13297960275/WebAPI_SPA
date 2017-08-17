@@ -1,0 +1,14 @@
+<h4 class="float-left">{{dynamicPopover.title}}</h4>
+<button class="close glyphicon glyphicon-remove" style="font-size:8px; color:#000000" ng-click="closeTree()"></button>
+<hr style="margin:5px 0; clear:both"/>
+
+<div style="height:200px; width:250px; overflow:auto">
+    <treecontrol class="tree-light" tree-model="treedata" on-selection="showSelected(node)">
+     	<input type="checkbox" ng-show="node.type == 'member'" ng-model="node.checked" ng-click="checkSelect(node)"/>
+     	&nbsp&nbsp&nbsp&nbsp<span ng-dblclick="selectMember(node)">{{node.name}}</span>
+ 	</treecontrol><!-- checkSelect(this, node) -->
+</div>
+<div class="text-center">
+	<button class="btn btn-xs btn-success" ng-click="multiSelect()">确认</button>&nbsp&nbsp&nbsp&nbsp
+	<button class="btn btn-xs btn-warning" ng-click="cancelSelect()">取消</button>
+</div>

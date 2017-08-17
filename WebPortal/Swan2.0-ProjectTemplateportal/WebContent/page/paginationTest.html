@@ -1,0 +1,30 @@
+<div style="float:right">
+  	<input type="text" placeholder="{{'projectName' | translate}}"/>
+  	
+  	<input type="button" class="btn btn-primary" value="{{'search' | translate}}"/>
+</div>  	
+<!-- <input type="button" class="btn btn-success" value="{{'add' | translate}}" ng-click=""/> -->
+<!-- <img src="../img/create.png" title="{{'create' | translate}}" /> -->
+<a href="javascript:void(0)" ng-contoller="addProjectController" title="{{'create' | translate}}"  class="glyphicon glyphicon-plus-sign" dialog-drt ng-click="openDialog()"></a>
+<a href="javascript:void(0)" ng-contoller="projectChartController" title="{{'chart' | translate}}" class="glyphicon glyphicon-picture" dialog-drt ng-click="openDialog()"></a>
+
+<!-- <input type="button" class="btn btn-info" value="{{'tableConfig' | translate}}" ng-click="configTableCells()"/> -->
+<table class="table table-striped table-hover" at-table at-config="paginationConfig" at-list="pageList">
+	<thead>
+	</thead> 
+	<tbody>       
+		<tr rowsNum="">            
+			<td at-implicit at-attribute="name" at-title="Project Name" ng-show="name" at-sortable width="20%"></td>
+			<td at-implicit at-attribute="pm" at-title="PM" ng-show="pm" at-sortable width="20%"></td>
+			<!-- at-initial-sorting="desc" 初始按照哪一列升序或者降序则设置该属性-->
+        	<td at-implicit at-attribute="tm" at-title="TM" ng-show="tm" at-sortable  width="20%"></td>
+        	<td at-implicit at-attribute="sd" at-title="SD" ng-show="sd" at-sortable width="20%"></td>
+        	<td width="20%"><a ui-sref='.projectDetail'>{{'detail' | translate}}</a></td>
+		</tr> 
+	</tbody>
+</table>
+	
+<uib-pagination total-items="paginationConfig.totalItems" ng-model="currentPage" first-text="{{'first' | translate}}" last-text="{{'last' | translate}}"
+	previous-text="{{'previous' | translate}}" next-text="{{'next' | translate}}" 
+	max-size="paginationConfig.maxSize" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="paginationConfig.itemsPerPage">
+</uib-pagination>

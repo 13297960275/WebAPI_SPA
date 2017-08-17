@@ -1,0 +1,38 @@
+<uib-tabset justified="true">
+    <uib-tab heading="Mix">
+        <div style="width:560px" ng-controller="MixChartCtrl">
+            <canvas class="chart chart-bar" chart-data="data" chart-options="options" chart-colors="colors"
+            chart-labels="labels" chart-dataset-override="datasetOverride">
+            </canvas>
+        </div>
+    </uib-tab>
+    <uib-tab heading="Radar">
+        <div style="width:560px" ng-controller="RadarCtrl">
+            <canvas class="chart chart-radar" chart-data="data" chart-options="options" chart-labels="labels" chart-series="series" chart-dataset-override="datasetOverride">
+            </canvas>
+        </div>
+    </uib-tab>
+    <uib-tab heading="Bubble">
+        <div style="width:400px" ng-controller="BubbleCtrl">
+            <canvas class="chart-bubble" chart-data="data" chart-series="series" 
+            chart-options="options" chart-dataset-override="datasetOverride">
+            </canvas>
+        </div>
+    </uib-tab>
+    <uib-tab heading="Polar">
+        <div style="width:560px" ng-controller="BaseCtrl">
+            <canvas class="chart chart-base" chart-data="data" chart-options="options" chart-labels="labels" chart-type="type">
+            </canvas>
+        </div>
+    </uib-tab>
+    <uib-tab heading="Ticks">
+        <div style="width:560px" ng-controller="TicksCtrl">
+            <canvas class="chart chart-line" chart-data="data" chart-options="options" chart-labels="labels" chart-series="series"></canvas>
+        </div>
+    </uib-tab>
+    <uib-tab heading="Line">
+        <div style="width:560px" ng-controller="LineCtrl">
+            <canvas class="chart chart-line" chart-data="data" chart-options="options" chart-labels="labels" chart-series="series" chart-click="onClick" chart-dataset-override="datasetOverride"></canvas>
+        </div>
+    </uib-tab>
+</uib-tabset>

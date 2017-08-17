@@ -1,0 +1,27 @@
+<div style="float: right">
+    <input type="text" placeholder="{{'taskName' | translate}}" />
+    <input type="button" class="btn btn-primary" value="{{'search' | translate}}" />
+</div>
+<a href="javascript:void(0)" ng-controller="mytaskChartController" title="{{'chart' | translate}}" class="glyphicon glyphicon-picture" ng-click="openDialog()"></a>
+<table class="table table-hover" at-table at-config="paginationConfig" at-list="data">
+    <tbody>
+        <tr>
+            <td at-implicit at-attribute="task" at-sortable width="10%"></td>
+            <td at-implicit at-attribute="start" at-sortable width="15%"></td>
+            <!-- at-initial-sorting="desc" -->
+            <td at-implicit at-attribute="finish" at-sortable width="15%"></td>
+            <td at-implicit at-attribute="actualStart" at-title="Actual start" at-sortable width="15%"></td>
+            <!-- at-initial-sorting="desc" -->
+            <td at-implicit at-attribute="actualFinish" at-title="Actual finish" at-sortable width="15%"></td>
+            <td at-implicit at-attribute="status" at-sortable width="20%"></td>
+            <td width="10%">
+                <a href="javascript:void(0)" title="{{'edit' | translate}}" ng-controller="editMyTaskController" class="glyphicon glyphicon-pencil" ng-click="openDialog(item)"></a>
+                <a href="javascript:void(0)" title="{{'remove' | translate}}" ng-controller="removeController" ng-click="openDialog()" class="glyphicon glyphicon-remove"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<uib-pagination template-url="../js/swan/bootstrap/template/pagination.html" total-items="paginationConfig.totalItems" ng-model="paginationConfig.currentPage" first-text="{{'first' | translate}}" last-text="{{'last' | translate}}" previous-text="{{'previous' | translate}}" next-text="{{'next' | translate}}" max-size="paginationConfig.maxSize" boundary-links="true" rotate="false" num-pages="num" items-per-page="paginationConfig.itemsPerPage"></uib-pagination>
+<div ng-show="paginationConfig.tableError">
+	获取列表信息失败，请刷新页面！
+</div>

@@ -1,0 +1,16 @@
+<div class="modal-header dialog-header-wait">
+  	<h4 class="modal-title">
+    	<span translate="{{modalConfig.header}}" class=""></span> 
+    	<!-- {{modalConfig.header}} -->
+  	</h4>
+</div>
+<div class="modal-body">
+  	<p style="color:red">{{modalConfig.errorMsg}}</p>
+  	<div class="progress progress-striped active">
+    <!-- <div class="progress-bar progress-bar-info" style="width: {{modalConfig.progress}}"></div> -->
+    	<uib-progressbar value="modalConfig.progress"></uib-progressbar>
+  	</div>
+  	<div class="text-center bold">
+  		{{modalConfig.progress}}%
+  	</div>
+</div>

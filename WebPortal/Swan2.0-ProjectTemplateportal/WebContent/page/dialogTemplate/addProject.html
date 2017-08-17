@@ -1,0 +1,115 @@
+<div class="dialog_Content form-horizontal"  ng-controller="uploadFileController">
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Name:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">PM:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.pm">
+        </div>
+        <div class="col-sm-3" ng-controller="pmSelectController">
+            <button class="btn btn-xs btn-primary" uib-popover-template="dynamicPopover.templateUrl" popover-is-open="dynamicPopover.isopen" popover-placement="right" popover-title="{{title}}" type="button" class="btn btn-default">
+                {{'select' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">TM:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.tm">
+        </div>
+        <div class="col-sm-3" ng-controller="tmSelectController">
+            <button class="btn btn-xs btn-primary" uib-popover-template="dynamicPopover.templateUrl" popover-is-open="dynamicPopover.isopen" popover-placement="right" popover-title="{{title}}" type="button" class="btn btn-default">
+                {{'select' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="form-group" ng-controller="datePickController">
+        <label for="name" class="col-sm-3 control-label">Start:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" uib-datepicker-popup datepicker-popup-template-url="../js/swan/bootstrap/template/datepickerPopup.html" datepicker-template-url="../js/swan/bootstrap/template/datepicker.html" ng-model="editItem.start" is-open="opened" min-date="minDate" max-date="" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+        </div>
+        <div class="col-sm-3">
+            <span class="input-group-btn">
+            	<button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+          	</span>
+        </div>
+    </div>
+    <div class="form-group" ng-controller="porjectFinishController">
+        <label for="name" class="col-sm-3 control-label">Finish:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" uib-datepicker-popup datepicker-popup-template-url="../js/swan/bootstrap/template/datepickerPopup.html" datepicker-template-url="../js/swan/bootstrap/template/datepicker.html" ng-model="editItem.finish" is-open="opened" min-date="minDate" max-date="" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+        </div>
+        <div class="col-sm-3">
+            <span class="input-group-btn">
+            	<button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+          	</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">SD:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.sd">
+        </div>
+        <div class="col-sm-3" ng-controller="sdSelectController">
+            <button class="btn btn-xs btn-primary" uib-popover-template="dynamicPopover.templateUrl" popover-is-open="dynamicPopover.isopen" popover-placement="right" popover-title="{{title}}" type="button" class="btn btn-default">
+                {{'select' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Doc:</label>
+        <!-- <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="filePath">
+        </div> -->
+        <div class="col-sm-3">
+	        <input type='file' nv-file-select uploader="uploader" ng-model="uploadFile" multiple />
+            <input type="button" class="btn btn-primary btn-xs" style="margin-top: 10px" value="{{'upload' | translate}}" ng-click="uploadAll()" />
+        </div>
+        <div class="col-sm-3" ng-show="uploading">
+	        <img src="../img/001.gif" />
+        </div>
+        <!-- <div class="col-sm-3">
+        	<input type="file" nv-file-select uploader="uploader" multiple  />
+        	<input type="button" class="btn btn-primary btn-xs" style="margin-top: 10px" value="{{'upload' | translate}}" ng-click="uploaderImg.uploadAll()" />
+        </div> -->
+    </div>
+    <!-- <div class="form-group" ng-repeat="item in uploader.queue">
+        <div style="padding: 0 10px" class="col-sm-2">
+        	File: {{item.file.name}}&nbsp&nbsp {{item.progress}}%
+            
+        </div>
+        <div class="col-sm-6">
+        	<div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+        	<button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+	            <span class="glyphicon glyphicon-trash"></span> Remove
+	        </button>
+        </div>
+    </div> -->
+    <!-- <div class="form-group" ng-repeat="item in uploaderImg.queue" ng-show="uploaderImg.queue.length>0">
+        <div class="col-sm-2">
+        	File: {{item.file.name}}
+        </div>
+        <div class="col-sm-6" ng-show="uploaderImg.isHTML5" ng-thumb="{ file: item._file, height: 100}"></div>
+        <div class="col-sm-2" class="progress progress-striped active">
+            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+	            <span class="glyphicon glyphicon-trash"></span> Remove
+	        </button>
+        </div>
+    </div>
+     <div class="form-group">
+        <div style="padding: 0 10px" ng-show="uploaderImg.queue.length>0">
+        	Total progress: {{uploaderImg.progress}}%
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploaderImg.progress + '%' }"></div>
+            </div>
+        </div>
+    </div> -->
+</div>

@@ -1,0 +1,33 @@
+<div style="float:right">
+    <input type="text" placeholder="{{'projectName' | translate}}" />
+    <input type="button" class="btn btn-primary" value="{{'search' | translate}}" ng-click="search()" />
+</div>
+<!-- <input type="button" class="btn btn-success" value="{{'add' | translate}}" ng-click=""/> -->
+<!-- <img src="../img/create.png" title="{{'create' | translate}}" /> -->
+<a href="javascript:void(0)" ng-controller="addProjectController" title="{{'create' | translate}}" class="glyphicon glyphicon-plus-sign" ng-click="openDialog()"></a>
+<a href="javascript:void(0)" ng-controller="projectChartController" title="{{'chart' | translate}}" class="glyphicon glyphicon-picture" ng-click="openDialog()"></a>
+<a ng-href="http://localhost:8080/Coc_ProjectTemplate/upload/download" ng-click="downTest()">{{'download' | translate}} </a><!-- ng-href="http://localhost:8080/Coc_ProjectTemplate/upload/download?a=1&b=1" -->
+<!-- <input type="button" class="btn btn-info" value="{{'tableConfig' | translate}}" ng-click="configTableCells()"/> -->
+<!-- <iframe id="ifile" src="{{file}}"  style="display:none"></iframe> -->
+<table class="table table-striped table-hover" at-table at-config="paginationConfig" at-list="data">
+	<thead></thead>
+    <tbody>
+        <tr>
+            <td at-implicit at-attribute="name" at-title="Project Name" at-sortable width="20%"></td>
+            <td at-implicit at-attribute="pm" at-title="PM" at-sortable width="20%"></td>
+            <!-- at-initial-sorting="desc" 鎸夌収姝ゅ垪闄嶅簭鎺掑垪 锛岃缃负asc鍒欎负鍗囧簭-->
+            <td at-implicit at-attribute="tm" at-title="TM" at-sortable width="20%"></td>
+            <td at-implicit at-attribute="sd" at-title="SD" at-sortable width="20%"></td>
+            <td width="20%">
+            	<a ui-sref="mainPage.projectDetail">{{'detail' | translate}}</a>
+            	&nbsp&nbsp&nbsp&nbsp
+            	<a href="javascript:void(0)" ng-controller="oneProjectChartController" title="{{'chart' | translate}}" class="glyphicon glyphicon-picture" style="font-size:12px" ng-click="openDialog()"></a>
+        	</td>
+        </tr>
+    </tbody>
+</table>
+<!-- <uib-pagination total-items="paginationConfig.totalItems" ng-model="currentPage" num-pages="numPages" first-text="{{'first' | translate}}" last-text="{{'last' | translate}}" previous-text="{{'previous' | translate}}" next-text="{{'next' | translate}}" max-size="paginationConfig.maxSize" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="paginationConfig.itemsPerPage"> </uib-pagination>
+ --> <!-- template-url="../js/swan/bootstrap/template/pagination.html" -->
+<uib-pagination template-url="../js/swan/bootstrap/template/pagination.html" total-items="paginationConfig.totalItems" ng-model="paginationConfig.currentPage" 
+boundary-links="true" direction-links="true" max-size="paginationConfig.maxSize" items-per-page="paginationConfig.itemsPerPage">
+</uib-pagination>

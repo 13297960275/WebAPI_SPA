@@ -1,0 +1,45 @@
+<header class="clearfix header" ng-controller="headerCtrl">
+	<div class="h-logo">{{'projectManage' | translate}}</div>
+	<nav class="h-rightNav">
+		<ul>
+			<li><span>{{'hello' | translate}}&nbsp&nbsp&nbsp&nbsp
+					{{userName}}
+				</span>
+			</li>
+			<li>
+				<!-- <li my-translate model-name="language" language="en">
+                    {{'language' | translate}}:&nbsp&nbsp
+                    <select ng-model="language">
+                        <option ng-repeat="item in languageArray" value="{{item}}">{{item | translate}}</option>
+                    </select>
+                </li> -->
+			</li>
+			<li><a ng-click="logout()">{{'logOut' | translate}}</a></li>
+		</ul>
+	</nav>
+</header>
+<div class="global-page container-fluid">
+    <div class="left-side">
+		<div ng-controller="accordionController">	 
+		  <uib-accordion close-others="true">
+		    <uib-accordion-group heading="{{'project' | translate}}" is-open="status.isFirstOpen">
+		      <a  ui-sref="mainPage.projectList" ng-class="{active:flag == '1'}" ng-click="accordionItemShow(1)">{{'myproject' | translate}}</a>
+		    </uib-accordion-group>
+		    <uib-accordion-group heading="{{'task' | translate}}">
+		      <a  ui-sref="mainPage.myTask" ng-class="{active:flag == '2'}" ng-click="accordionItemShow(2)">{{'mytask' | translate}}</a>
+		    </uib-accordion-group>
+		   	<!--  动态菜单 -->
+		    <!-- <uib-accordion-group heading="Menu">
+		      <a ng-repeat="item in mainPageMenu" ui-sref="{{item.url}}" ng-class="{active:flag == item.url}" ng-click="accordionItemShow(item.url)">{{item.name | translate}}</a>
+		    </uib-accordion-group> -->
+
+		  </uib-accordion>
+		</div>
+	</div>
+	
+	<div class="right-side">
+		<section ui-view>
+
+    	</section>
+	</div>
+</div>

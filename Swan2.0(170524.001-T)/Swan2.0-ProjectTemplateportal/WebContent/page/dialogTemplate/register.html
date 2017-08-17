@@ -1,0 +1,55 @@
+<div class="modal-header dialog-header-edit">
+  <button type="button" class="confirm close glyphicon glyphicon-remove" ng-click="cancel()"></button>
+  <h4 class="modal-title">
+    <span translate="regieter"></span>
+    <!-- {{modalConfig.header}} -->
+  </h4>
+</div>
+<div class="modal-body" style="overflow-y: auto">
+	<div class="dialog_Content form-horizontal">
+	    <div class="form-group">
+	        <label for="name" class="col-sm-3 control-label">{{'account' | translate}}:
+	        </label>
+	        <div class="col-sm-6">
+	            <input id="name" type="text" class="form-control" ng-model="account" validator="required" valid-method="blur" message-id="accountMessage">
+	        </div>
+	        <div class="col-sm-3" id="accountMessage" style="padding-top: 5px; font-size: 10px; color: red"></div>
+	    </div>
+	    <div class="form-group">
+	        <label for="name" class="col-sm-3 control-label">{{'password' | translate}}:</label>
+	        <div class="col-sm-6">
+	            <input id="name" type="password" class="form-control" ng-model="user.password" validator="required" valid-method="blur" message-id="passwordMessage" />
+	        </div>
+	        <div id="passwordMessage" class="col-sm-3" style="padding-top: 5px; font-size: 10px; color: red"></div>
+	    </div>
+	    <div class="form-group">
+	        <label for="name" class="col-sm-3 control-label">{{'confirm' | translate}}{{'password' | translate}}:</label>
+	        <div class="col-sm-6">
+	            <input id="name" type="password" class="form-control" ng-model="user.confirmPassword" validator="uniform " uniform-value="{{item.password}}" valid-method="blur" message-id="confirmPasswordMessage" ng-blur="confirmPasswordFlag=true" />
+	        </div>
+	        <div id="confirmPasswordMessage" class="col-sm-3" style="padding-top:5px; font-size:10px; color:red">
+	    	</div>
+	    </div>
+	    <div class="form-group">
+	        <label for="name" class="col-sm-3 control-label">{{'email' | translate}}:
+	        </label>
+	        <div class="col-sm-6">
+	            <input type="text" class="form-control" ng-model="item.email" validator="email,required" valid-method="blur" 
+	            message-id="emailMessage">
+	        </div>
+	        <div id="emailMessage" class="col-sm-3" style="padding-top: 5px; font-size: 10px; color: red"></div>
+	    </div>
+	</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-info" ng-click="ok()">
+    {{"ok" | translate}}
+  </button>
+  <button type="button" class="btn btn-warning" ng-click="cancel()">
+    {{"no" | translate}}
+  </button>
+  
+  <button type="button" class="btn btn-warning" ng-click="reset()">
+    reset
+  </button>
+</div>

@@ -1,0 +1,46 @@
+<div class="login-page" ng-controller="loginController">
+    <div style="over-flow:hidden">
+        <nav class="h-rightNav">
+            <ul>
+                <li>
+                    <span translate="language">language:&nbsp&nbsp</span>
+                    <select ng-model="language.lang" ng-options="item for item in languageArray" 
+                    	change-lang language="{{language.lang}}">
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <form class="bs-example bs-example-form" name="loginForm">
+        <div class="panel panel-success login-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title italic">{{'projectManage' | translate}}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-user"></span>
+                    <input type="text" class="form-control" placeholder="{{'account' | translate}}" ng-model="user.account" validator="required" 
+                    valid-method="blur" required-error-message="This should be required!" message-id="accountMessage" />
+                </div>
+                <div id="accountMessage" style="font-size:10px; color:red">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                    <input type="password" class="form-control" placeholder="{{'password' | translate}}" ng-model="user.password" 
+                    validator="required,number" required-error-message="Password Required" required-success-message="Good Required" 
+                    number-error-message="{{}}" valid-method="blur" message-id="passwordMessage" ng-keypress="enter($event)" />
+                </div>
+                <div id="passwordMessage" style="font-size:10px; color:red">
+                </div>
+            </div>
+            <div class="panel-footer">
+                <input type="checkbox" ng-model="rememberChcebox">{{'remember' | translate}}
+                	<a href="javascript:void(0)" ng-controller="registerController" dialog-drt template-url="dialogTemplate/register.html" class="underline italic float-right" ng-click="openDialog()">
+  						{{'register' | translate}}
+  					</a>
+                <input type="button" ng-disabled="!form.checkValid(loginForm)" class="btn btn-success" value="{{'login' | translate}}" ng-click="login()">
+            </div>
+        </div>
+    </form>
+</div>

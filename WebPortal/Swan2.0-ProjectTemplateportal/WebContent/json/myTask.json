@@ -1,0 +1,13 @@
+{"data": [{"id": 1, "task": "i18n", "project": "project1", "start": "2016/6/6","finish": "2016/6/7", "actualStart": "2016/6/6","actualFinish": "2016/6/7", "status": "done"},
+ {"id": 2, "task": "bootstrap css", "project": "project1", "start": "2016/6/8","finish": "2016/6/9", "actualStart": "2016/6/8","actualFinish": "2016/6/9", "status": "done"},
+ {"id": 3, "task": "pagination", "project": "project1", "start": "2016/6/10","finish": "2016/6/11", "actualStart": "2016/6/10","actualFinish": "2016/6/11", "status": "done"},
+ {"id": 4, "task": "ajax", "project": "project1", "start": "2016/6/12","finish": "2016/5/13", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 5, "task": "dialog", "project": "project1", "start": "2016/6/14","finish": "2016/6/15", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 6, "task": "validation", "project": "project1", "start": "2016/6/16","finish": "2016/6/17", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 7, "task": "dynamic js", "project": "project1", "start": "2016/6/18","finish": "2016/6/19", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 8, "task": "chart", "project": "project1", "start": "2016/6/18","finish": "2016/6/19", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 9, "task": "tree", "project": "project1", "start": "2016/6/20","finish": "2016/6/21", "actualStart": "","actualFinish": "", "status": "planed"},
+ {"id": 10, "task": "demo", "project": "project1", "start": "2016/6/22","finish": "2016/6/23", "actualStart": "","actualFinish": "", "status": "planed"}],
+"totalItems": 10,
+"status": "0000"
+}

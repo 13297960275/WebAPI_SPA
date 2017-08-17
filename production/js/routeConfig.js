@@ -12,11 +12,12 @@ function routeFn($stateProvider, $urlRouterProvider, $httpProvider) {
         },
         resolve: {
             loadModule: ["$ocLazyLoad", function($ocLazyLoad) {
-                return $ocLazyLoad.load(['swan.ui.bootstrap',
+                return $ocLazyLoad.load([
+                    /*'swan.ui.bootstrap',
                     'swan.service.translate',
                     'swan.service.httpService',
-                    'swan.service.validation'
-                    //'swan.ui.dialog'
+                    'swan.service.validation',
+                    'swan.ui.dialog'*/
                 ]);
             }],
             loadMyCtrl: ['$ocLazyLoad', 'loadModule', function($ocLazyLoad, loadModule) {
@@ -36,21 +37,21 @@ function routeFn($stateProvider, $urlRouterProvider, $httpProvider) {
         },
         resolve: {
             loadModule: ["$ocLazyLoad", function($ocLazyLoad) {
-                return $ocLazyLoad.load(['swan.ui.chart',
+                return $ocLazyLoad.load([
+                    /*'swan.ui.chart',
                     'swan.ui.bootstrap',
                     //'swan.service.translate',
                     'swan.service.httpService',
                     'swan.service.validation',
                     'swan.ui.pagination',
                     'swan.service.fileUpload',
-                    'swan.ui.tree'
-                    //'swan.ui.dialog'
+                    'swan.ui.tree',
+                    //'swan.ui.dialog'*/
                 ]);
             }],
             loadMyCtrl: ['$ocLazyLoad', 'loadModule', function($ocLazyLoad, loadModule) {
                 return $ocLazyLoad.load({
-                    files: ['module/common/controller/commonCtrl.js',
-                        'js/app-validation-rule.js'
+                    files: ['module/common/controller/commonCtrl.js'
                     ]
                 });
             }]

@@ -1,0 +1,63 @@
+<div class="project-info form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-1 control-label">Name:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="name" ng-model="name">
+    </div>
+    <label for="name" class="col-sm-1 control-label">PM:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="PM" ng-model="pm">
+    </div>
+    <label for="name" class="col-sm-1 control-label">TM:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="TM" ng-model="tm">
+    </div>
+  </div>
+  <div class="form-group">
+  	<label for="name" class="col-sm-1 control-label">Start:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="Start" ng-model="start">
+    </div>
+    <label for="name" class="col-sm-1 control-label">Finish:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" placeholder="finish" ng-model="finish">
+    </div>
+    <label for="name" class="col-sm-1 control-label">SD:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" placeholder="SD" ng-model="sd">
+    </div>
+    <button class="btn btn-info">{{'confirm' | translate}}</button>
+  </div>
+  
+</div>
+<div class="table-tools">
+	<div class="float-right">
+	  	<input type="text" placeholder="{{'taskName' | translate}}"/>
+	  	
+	  	<input type="button" class="btn btn-primary" value="{{'search' | translate}}"/>
+	</div>
+	<a href="javascript:void(0)" title="{{'create' | translate}}"  class="glyphicon glyphicon-plus-sign" ng-controller="addTaskController" ng-click="openDialog()"></a>
+	<a href="javascript:void(0)" title="{{'chart' | translate}}" class="glyphicon glyphicon-picture"></a>
+</div>
+
+<table class="table table-hover" at-table at-config="paginationConfig" at-list="data">
+	<tbody>       
+		<tr>            
+			<td at-implicit at-attribute="task" at-sortable width="10%"></td>
+			<td at-implicit at-attribute="worker" at-sortable width="10%"></td>
+        	<td at-implicit at-attribute="start" at-sortable  width="15%"></td>
+        	<td at-implicit at-attribute="finish" at-sortable width="15%"></td>
+        	<td at-implicit at-attribute="actualStart" at-title="Actual start" at-sortable  width="15%"></td><!-- at-initial-sorting="desc" -->
+        	<td at-implicit at-attribute="actualFinish" at-title="Actual finish" at-sortable width="15%"></td>
+        	<td at-implicit at-attribute="status" ng-class="{'success': status=='done'}" at-sortable width="10%"></td>         
+			<td>
+        		<a href="javascript:void(0)" title="{{'edit' | translate}}" ng-controller="editController" 
+            class="glyphicon glyphicon-pencil" ng-click="openDialog(item)"></a>
+        		<a href="javascript:void(0)" title="{{'remove' | translate}}" ng-controller="removeController" 
+            ng-click="openDialog(item)" class="glyphicon glyphicon-remove"></a>
+      </td>
+    </tr>
+	</tbody>
+</table>
+	
+<uib-pagination template-url="../js/swan/bootstrap/template/pagination.html" total-items="paginationConfig.totalItems" ng-model="paginationConfig.currentPage" max-size="paginationConfig.maxSize" boundary-links="true" rotate="false" num-pages="num" items-per-page="paginationConfig.itemsPerPage"></uib-pagination>

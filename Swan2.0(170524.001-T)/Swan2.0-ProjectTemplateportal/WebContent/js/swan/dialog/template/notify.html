@@ -1,0 +1,15 @@
+<div class="modal-header dialog-header-notify">
+  <button type="button" class="close" ng-click="cancel()" class="pull-right">&times;</button>
+  <h4 class="modal-title text-info">
+    <span translate="{{modalConfig.header}}" class="{{modalConfig.icon}}"></span>
+    <!-- {{modalConfig.header}} -->
+  </h4>
+</div>
+<div class="modal-body text-info" translate="{{modalConfig.content}}">
+  <!-- {{modalConfig.content}} -->
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" ng-click="cancel()">
+    {{"ok" | translate}}
+  </button>
+</div>

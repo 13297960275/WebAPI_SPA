@@ -1,0 +1,57 @@
+<div class="dialog_Content form-horizontal">
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Task:</label>
+        <div class="col-sm-6">
+            <input id="name" type="text" class="form-control" ng-model="editItem.task">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Worker:</label>
+        <div class="col-sm-6">
+            <input id="name" type="text" class="form-control" ng-model="editItem.worker">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Start:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.start" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Finish:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="editItem.finish" />
+        </div>
+    </div>
+    <div class="form-group" ng-controller="editTaskStartDateController">
+        <label for="name" class="col-sm-3 control-label">Actual Start:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="actualStartDate" datepicker-options="dateOptions" is-open="startOpened" close-text="Close" datepicker-append-to-body="appendToBody" popup-placement="bottom-left" ng-required="true"/>
+        </div>
+        <div class="col-sm-1" style="margin-left: -25px">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+    <div class="form-group" ng-controller="editTaskFinishDateController">
+        <label for="name" class="col-sm-3 control-label">Actual finish:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="actualFinishDate" datepicker-options="dateOptions" is-open="endOpened" close-text="Close" datepicker-append-to-body="appendToBody" popup-placement="bottom-left" ng-required="true"/>
+        </div>
+        <div class="col-sm-1" style="margin-left: -25px">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Status:</label>
+        <div class="col-sm-8">
+            <input type="radio" name="myTestRadio" ng-model="item.status" value="planed" ng-checked="editItem.status == 'planed'" />Planed
+            <input type="radio" name="myTestRadio" ng-model="item.status" value="ongoing" ng-checked="editItem.status == 'ongoing'" />Ongoing
+            <input type="radio" name="myTestRadio" ng-model="item.status" value="done" ng-checked="editItem.status == 'done'" />Done
+            <input type="radio" name="myTestRadio" ng-model="item.status" value="removed" ng-checked="editItem.status == 'removed'" />Removed
+        </div>
+    </div>
+</div>
